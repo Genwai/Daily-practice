@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		urlhttps://ke.qq.com/classroom/index.html#course_id=237495&term_id=100280118&ch_id=380889&vch_id=58&section_id=237&task_id=1549512531484599
+	</body>
+<script type="text/javascript">
+	var rDate = /^(\d{4})((?:0|1)?\d)(?:(0|1|2|3)?\d)$/; // 正则写在这里
+
+// 下面的变量，其结果都要符合预期
+	var ret1 = rDate.exec('20130211');
+	var ret2 = rDate.exec('20133211');
+	var ret3 = rDate.exec('2013211');
+	var ret4 = rDate.exec('2013251');
+	var ret5 = rDate.exec('201321');
+	var ret6 = rDate.exec('1321');
+	console.log(ret1[3])
+</script>
+</html>

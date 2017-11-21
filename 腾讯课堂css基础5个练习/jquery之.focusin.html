@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+				<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		span{
+			display: none;
+		}
+	</style>
+	</head>
+	<body>
+		<ul>
+			<li>focusin事件会在元素，或者任何内部元素，获得焦点时候出发，这是与focus显著区别</li>
+			<li>可以在父元素检测子元素获得焦点的情况</li>
+		</ul>
+		<p>
+			<input type="text" placeholder="text,测试focusin" name="" id="" value="" />
+			<span>cc</span>
+		</p>
+		<p>
+						<input type="text" placeholder="text,测试focusin" name="" id="" value="" />
+						<span>dd</span>
+		</p>
+	</body>
+<script type="text/javascript">
+	$('p').focusin(function  () {
+		$(this).find('span').css({
+			color:'red',
+			display:'inline'
+		})
+	})
+	$('p').focusout(function  () {
+		$(this).find('span').css('display','none')
+	})
+</script>
+</html>

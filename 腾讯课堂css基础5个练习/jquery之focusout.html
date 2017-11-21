@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<ul>
+			<li>focusout 事件会在元素（或者其内部的任何元素）失去焦点时触发。</li>
+			<li>这跟 blur 事件的显著区别在于，它可以在父元素上检测子元素失去焦点的情况(换而言之，它支持事件冒泡)。</li>
+		</ul>
+		<p>
+		<input type="text" name="" id="inpu_f" value="" placeholder="检测focusout"/>
+		<div class="meiya"></div>
+		<input type="text" name="" id="in_b" value="" placeholder="检测blur"/>
+		<div class="youya"></div>
+		</p>
+	</body>
+	<script type="text/javascript">
+			var numf=0;
+			var numb=0;
+		$('p').focusout(function  () {
+			numf=numf+1;
+			$('.meiya').text('focusout'+numf)
+		})
+		
+		
+		$('#in_b').blur(function  () {
+			numb =numb+1;
+			$('.youya').text(numb)
+		})
+	</script>
+</html>

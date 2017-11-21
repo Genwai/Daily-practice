@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画必备属性：transform</title>
+		<style type="text/css">
+			.circle{
+				width: 60px;
+				height: 60px;
+				border: 1px solid silver;
+				border-radius: 50%;
+				background: salmon;
+				transition: all 2s;
+				text-align: center;
+				/*padding-top: 20px;*/
+			}
+			.circle:hover{
+				/*transform: translate(500px);*/
+				transform: scale(5);
+				/*transform: rotate(360deg);*/
+				/*transform: skew(300deg);*/
+				transform-origin: left top;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<p>transform:本意变形；在CSS中可以对元素进行移动：<strong style="color: salmon;">
+			移动 ：translate 旋转： rotate 缩放： scale 倾斜： skew</strong> </p>
+			
+		<div class="circle">
+			nice
+		</div>
+	</body>
+</html>

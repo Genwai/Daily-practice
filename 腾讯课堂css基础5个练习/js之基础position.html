@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				position: relative;
+				width: 200px;
+				height: 200px;
+				background: sienna;
+				right: 50px;
+				top: 10px;
+			}
+			.fix_do{
+				position: fixed;
+				right: 5px;
+				bottom: 10px;;
+				background: salmon;
+				padding: 5px;
+				border: 1px slid silver;
+				
+			}
+			.absolute{
+				position: absolute;
+				background: ghostwhite;
+				bottom: 5px;
+				left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		postion:位置属性：定位方式 默认static
+		1、fix 相对于视窗
+		relative :相对于自己偏移 
+		right/left
+		top/bottom
+		absolute:相对于relative fix 
+		fix :相对于浏览器的窗口；left bottom 与滚动条无关
+	<div class="box">
+		<div class="absolute">
+			我是相对于absolute
+		</div>
+		<div class="fix_do">
+			我是fix 定位与box
+			<!--这个又不是相对于box 是相对于视窗的-->
+		</div>
+	</div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,155 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #ebebeb;
+	font-family: "times new roman";
+}
+a{
+	text-decoration: none;
+}
+.wrap{
+	width: 640px;
+	margin: 0 auto;
+
+}
+#swipe ul{
+	background: black;
+	height: 22px;
+	opacity: 0.4;
+	position: absolute;
+	bottom: 0px;
+	right: 0;
+	width: 100%;
+	padding-left: 8px;
+	
+}
+#swipe{
+	position: relative;
+	}
+#swipe li{
+	width: 14px;
+	height: 14px;
+	float: right;
+	background: white;
+	border-radius: 100%;
+	margin-right: 15px;
+	margin-top: 4px;
+	cursor: pointer;
+}
+#swipe .active{
+	background: salmon;
+}
+.nav{
+	background: white;
+	
+}
+.nva_left,.nva_right{
+	
+    /*border-right: 1px solid #EAEAEA;*/
+    float: left;
+    width: 50%;
+
+    background: white;
+	/*margin-top: 10px;*/
+	
+}
+.nva_left{
+	border-right: 1px silver #EAEAEA;
+	width: calc(50%-1px);
+}
+  .nva_right{
+
+	
+	position: relative;
+
+
+}
+.nva_left h3 ,.nva_right h3{
+	font-size: 1.26rem;
+    color: #1bb3fb;
+    /*padding-left: 16px;*/
+   text-indent: 0.95rem;
+	line-height: 34px;
+    border-bottom: 1px solid #EAEAEA;
+}
+.nva_left img{
+	
+	width: 45px;
+	height: 45px;
+	float: left;
+	padding-left: 15px;
+	padding-top: 5px;
+}
+.buy{
+	
+    float: right;
+    background: #1bb3fb;
+    color: #fff;
+    height: 30px;
+    width: 65px;
+    text-align: center;
+    /* vertical-align: middle; */
+    line-height: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    
+
+}
+li{
+	list-style-type: none;
+}
+.nav{
+	margin-top: 20px;
+	border: 1px solid #EAEAEA;
+}
+.nva_left li{
+	height: 55px;
+}
+.nva_left h4{
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+
+
+.nva_right h6{
+	color: #797979;
+	text-indent: 1.6rem;
+	font-size: 1.08rem;
+	margin-top: 1px;
+}
+.nva_right a{
+	position:relative;
+	margin:0 auto;
+	padding:5px 0;
+	width:95%;
+	height: 62.4px;
+	color:#797979;
+	border-bottom:1px solid #EAEAEA;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:3; 
+}
+.nva_right a ::befor{
+	/*这个a before 意思是说这个标签的之前*/
+	bottom: 0;
+}
+.nva_right a::after,
+.nva_right a::before{
+	position:absolute;
+	content: "";
+	display: block;
+	width: 100%;
+	height:5px;
+	background: #fff;
+}
+.afterclearboth::after{
+	content: "";
+	display: block;
+	clear: both;
+}

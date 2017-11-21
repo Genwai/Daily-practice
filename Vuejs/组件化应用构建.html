@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	
+	</head>
+	<body>
+		<ol>
+			<!--创建一个todo-item组件的实例-->
+			<todo-item></todo-item>
+		</ol>
+		<div class="app6">
+			<ul>
+				<li v-for="todo in todos">
+					{{todo.text}}
+				</li>
+			</ul>
+		</div>
+		
+		<div class="app7">
+			<!--
+				现在我们会每个todo-item 提供todo对象
+				todo对象是变量，即其内容可以是动态的
+				我们也需要为每个组件提供一个“key”
+			-->
+			<ul>
+				<todo-item 
+				v-for ="item in groceryList"
+				v-bind:todo ='item'
+				v-bind:key ='item.id'
+					></todo-item>
+			</ul>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		var app6 =new Vue({
+			el:'.app6',
+			data:{
+				todos:[
+				{text:"genwai1"},
+				{text:"genwai1"}
+				]
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		//定义一个名为genwai的新组建
+//		Vue.component('todo-item',{
+//			template:'<li>这是一个代办项目</li>'
+//		})
+		Vue.component('todo-item',{
+			//todo-item 组件现在接受一个
+			//“prop”,类似一个自定义属性
+			//这个属性名为todo
+			props:['todo'],
+			template:'<li>{{todo.text}}</li>'
+		})
+		var app7 =new Vue({
+			el:'.app7',
+			data:{
+				groceryList:[
+				{id:0,text:'genwai'}
+				]
+			}
+		})
+	</script>
+</html>

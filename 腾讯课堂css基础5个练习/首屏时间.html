@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			var perfomance =window.Date.now();
+		</script>
+		<style type="text/css">
+			.a{
+				/*font-family: "-apple-system-font,Helvetica Neue,sans-serif";*/
+				font-family: "微软雅黑";
+			}
+		</style>
+		<title>首屏时间</title>
+	</head>
+	<body>
+		<p>sdf你好 你好呀 </p>
+		<div class="ab1"></div>
+		<div class="ab2"></div>
+		<div class="ab3"></div>
+		<div class="ab4"></div>
+		<!--首屏可见结束-->
+		<script type="text/javascript">
+			var firstscreen = window.Date.now();
+		</script>
+		<div class="ab5"></div>
+		<div class="ab6"></div>
+		<div class="ab7"></div>
+	</body>
+	<script type="text/javascript">
+		var shouping = firstscreen - performance.timing.navigationStart;
+//		console.log(shouping)
+		var baipingshijian= 1501663689877 - 1501663688757
+		console.log(baipingshijian)//这都是代表着毫秒
+		var shoupingshijian = 1501663690071 - 1501663688757
+		console.log(shoupingshijian)
+		
+		
+	</script>
+</html>

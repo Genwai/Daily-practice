@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	.color{
+		color: saddlebrown;
+		font-family: "微软雅黑";
+	}
+</style>
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<ul>
+		<li>hover(handlerin,handlerout)</li>
+		<li>其实hover同时绑定了两个事件:mouseenter;mouseleave</li>
+		<li class="fade">test3</li>
+		<li class="fade">in-and-out</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	$('li').hover(function  () {
+		$(this).toggleClass('color');
+		$(this).siblings().removeClass('color')
+		$(this).append('<span>我是从后面插入genwai<span>')
+	},function  () {
+		$(this).find('span:last-child').remove();
+		
+	})
+	$("li.fade").hover(function(){
+		$(this).fadeOut(100);//先出去才能进来
+		$(this).fadeIn(500);
+	}
+	);
+</script>
+<script type="text/javascript">
+	
+</script>
+</html>

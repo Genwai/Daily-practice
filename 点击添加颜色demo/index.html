@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/addClass.css"/>
+	</head>
+	<body>
+		<ul class="text">
+			<li class="add"><a class="adda"> i love you</a></li>
+			<li>
+				<a class="adda"> i love you</a>
+			</li>
+			<li>
+				<a class="adda"> i love you</a>
+			</li>
+			<li>
+				<a class="adda"> i love you</a>
+			</li>
+			<li>
+				<a class="adda"> i love you</a>
+			</li>
+		</ul>
+	</body>
+	<script>
+//		$(".adda").on('click',function(){
+//			$(this).siblings('a').removeClass("adda1");
+//			$(this).addClass("adda1")
+//			
+//		})
+
+		$(".text li").click(function(){
+		$(this).siblings('li').removeClass("adda1");
+			$(this).addClass("adda1")
+		})
+		
+	</script>
+</html>

@@ -1,0 +1,18 @@
+li{
+	list-style-type: none;
+}
+.item-tt{
+	font-size: 15px;
+	line-height: 30px;
+	
+}
+.icon-todo{
+	width: 18px;
+	height: 18px;
+	margin-left: 10px;
+	display:inline-block ;
+	
+}
+.item--done{
+	text-decoration: line-through;
+}

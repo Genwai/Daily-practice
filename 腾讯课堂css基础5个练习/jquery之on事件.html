@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.test{
+				color: salmon;
+				border: 1px solid silver;
+				height: 50px;
+			}
+			.as{
+				background: violet;
+			}
+			.mm{
+				background: gold;
+				
+			}
+		</style>
+	</head>
+	<body>
+	<p>My Name is Genwai</p>
+	<i>传值方法测试</i>
+	
+	<p>这里是什么东西</p>
+	<button>请点击我</button>
+	<span style="display: none;">出现什么鬼 </span>
+	<div class="test">
+		这里就只是一个测试
+	</div>
+	</body>
+<script type="text/javascript">
+	$('p').on('click',function  () {
+		$(this).append('<div>'+ $(this).text()+'</div>')
+	})
+</script>
+<script type="text/javascript">
+	function myHander (event) {
+		console.log(event.data.foo)
+	}
+	$('i').on('click',{foo:'genwai'},myHander)
+</script>
+<script type="text/javascript">
+	$('form').on('submit',false);//取消表单提交的动作，并且通过false的方法来防止事件冒泡
+	//另一种方法
+	$('form').on('submit',function(event){
+		event.preventDefault();
+	})
+	$('form').on('submit',function  (event) {
+		event.stopPropagation()
+	})
+</script>
+<script type="text/javascript">
+	$('i').on('click',function  () {
+		$(this).trigger().fadeOut(1000)
+	})
+</script>
+<script type="text/javascript">
+	$('div.test').on({
+		click:function  () {
+			$(this).toggleClass('as');
+		},
+		mouseenter:function  () {
+			$(this).addClass('mm')
+		},
+		mouseleave:function  () {
+			$(this).removeClass('test')
+		}
+	})
+	//keydown是输入显示e.which w.type
+</script>
+</html>

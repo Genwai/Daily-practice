@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<style type="text/css">
+			a{
+				text-decoration: none;
+				color: white;
+				border: 1px solid silver;
+				background: silver;
+				border-radius: 4px;
+				font-size: 16px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<input type="text" placeholder="账号" name="" id="" value="" /></br>
+		<input type="password" name=""  placeholder="密码"/>
+		<a href="#">显示密码</a><br />
+		<button class="login_btn">登录</button>
+	</body>
+	<script type="text/javascript">
+		var input =document.getElementsByTagName('input')[1];
+		var a =document.getElementsByTagName('a')[0];
+		a.onclick=function  () {
+			if (input.type == 'password') {
+				input.type ='text';
+			} else{
+				input.type ='password';
+			}
+		}
+		
+		$('body').click(function  (event) {
+			//keycode =13是回车键
+			if (event.keyCode == '13') {
+				$('.login_btn').click()
+			}
+		})
+		
+	</script>
+</html>

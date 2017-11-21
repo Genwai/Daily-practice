@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<p>enheng</p>
+		<select name="" id="silgle">
+			<option >香蕉</option>
+			<option >水果</option>
+		</select>
+		
+		<select name="" multiple="multiple" class="mult">
+			<option value="" selected="selected">genwai</option>
+			<option value="" value="genchen">genchen</option>
+		</select>
+		<input type="text" name="text1" id="text1" value="" />
+		<div class="div1">
+			
+		</div>
+		<button class="dd">ssdf </button>
+		<button class="cc">cc</button>
+		<button class="mm">ccmm</button>
+		<i class="is"></i>
+		<input type="text" name="" id="toupperCase" value="" placeholder="变大写哦" />
+	</body>
+	<script type="text/javascript">
+		function seleWrite () {
+			var $singleValue =$('#silgle ').val();
+			var $multValue =$('.mult ').val() || [];
+//			console.log($multValue.join(','))
+			$('p').html('<i>单选的内容是：'+ $singleValue+'</i><i>多选的Value值是</i>'+ $multValue.join(","))
+		}
+		$('select').change(seleWrite);
+		seleWrite()
+		$('input').keyup(function  () {
+			var $value = $(this).val();
+			$('.div1').html($value);
+			
+		})
+		$('button').click(function  () {
+			var $text= $(this).text();
+//			console.log($this.text())
+			$('.is').html($text)
+		})
+		$('#toupperCase').bind('blur',function(){
+			$(this).val(function  (i,val) {
+				return val.toUpperCase();
+			})
+		})
+	</script>
+</html>

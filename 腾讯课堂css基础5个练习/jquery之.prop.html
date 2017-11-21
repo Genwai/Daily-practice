@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<input type="checkbox" name="" id="check" value="" checked="" />
+		<input type="checkbox" name="" id="check" value=""  />
+		<input type="text" id="" value="" checked="" />
+		<label for="check">请点击我</label>
+		<div id=""></div>
+		<p style="color: saddlebrown;"></p>
+		<i style="color: cadetblue;"></i>
+	</body>
+	<script type="text/javascript">
+//		$('input').change(function  () {//可以获取到点击事件
+//			var $this =$(this);
+//			$('div').html('通过.attr实现,获取checked的值:' + $this.attr('checked'))//看出区别了，它只是获取，没有改变咯
+//			$('p').html('通过,prop获取checked属性：' + $this.prop('checked'));
+//			$('i').html('通过is来获取属性'+$this.is(':checked'));
+//		})
+	$('input:eq(1)').prop('checked',true)
+</script>
+</html>

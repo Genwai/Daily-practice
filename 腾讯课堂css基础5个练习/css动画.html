@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 600px;
+				height: 200px;
+				border: 1px solid silver;
+				background: salmon;
+				margin: 20px auto;
+			}
+			.circle{
+				width: 50px;
+				height: 50px;
+				background: blueviolet;
+				border-radius: 50%;
+				margin: 75px 0;
+				transition: all 10s;
+				
+				transition-property: all;/*属性  重点*/
+				transition-duration: 2s;/*持续时间*/
+				
+				transition-timing-function: ease-in-out;/*动效*/
+				transition-delay: inherit;/*延迟时间：1s 鼠标移动延迟1秒开始执行*/
+			}
+			.box:hover .circle{
+				width: 40px;
+				height: 40px;
+				background: red;
+				transform: translate(550px ,0);
+			
+			}
+		</style>
+	</head>
+	<body>
+		补间动画-transition:动画的开始与结束
+		帧动画-animation：
+		不支持动画的一些属性：
+		<ul>
+			<li>background-image:图片A与图片B之间的转化</li>
+			<li>float:</li>
+			<li>width/height none -10px 但是 10px -20px is ok</li>
+			<li>display</li>
+			<li>visibility</li>
+			<li>position</li>
+			
+		</ul>
+		<div class="box">
+			<div class="circle">
+				
+			</div>
+		</div>
+	</body>
+</html>

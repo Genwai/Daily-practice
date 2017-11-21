@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>例子1：<p>下文的例子在网页中设置了两个简单的按钮，以触发 setTimeout() 和 clearTimeout() 方法：
+				按下第一个按钮会在 2s 后显示一个警告对话框，并将此次 setTimeout 的延时 ID 保存起来。
+				按下第二个按钮可以取消这次延时调用行为</p></li>
+		<li></li>
+		</ul>
+		<div id="my_box" style="border: 1px dashed salmon;background: red;color: white;">
+			<p>测试Interval</p>
+		</div>
+		<button onclick="clearColor1()">停止颜色变化</button>
+		
+		<div id="my_box2" style="border: 1px dashed salmon;background: red;color: white;">
+			<p>测试Interval</p>
+		</div>
+	</body>
+<script type="text/javascript">
+	var timeoutID;//唯一标识
+	function delayedAlert () {
+		timeoutID =window.setTimeout(slowAlert,2000)
+	}
+	function slowAlert () {
+//		alert('delayedAlert,2秒才弹出');
+	}
+	
+	function clearAlert () {
+		window.clearTimeout(timeoutID)
+	}
+	
+	delayedAlert();
+	clearAlert();
+	
+</script>
+<script type="text/javascript">
+	var intervar;
+	
+	function changeColor () {
+		intervar =setInterval(setColor,300)
+	}
+	function setColor () {
+		var myBox =document.querySelector('#my_box');
+		myBox.style.background =myBox.style.background == 'red'? 'yellow':'red';
+		
+	}
+	function clearColor1 () {
+		clearInterval(intervar)
+	}
+	changeColor();
+</script>
+<script type="text/javascript">
+	var timeout;
+	
+	function changeColor () {
+		timeout =setTimeout(setColor,300)
+	}
+	function setColor () {
+		var myBox =document.querySelector('#my_box2');
+		myBox.style.background =myBox.style.background == 'red'? 'yellow':'red';
+		
+	}
+	function clearColor () {
+		clearTimeout(timeout)
+	}
+	changeColor();
+</script>
+</html>

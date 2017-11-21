@@ -1,0 +1,203 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+body{
+	font-size: 12px;
+	line-height: 120%;
+	text-align: center;
+	color: #333;
+	padding: 20px;
+	
+}
+.list{
+	text-align: left;
+	
+}
+.box{
+	border-top:1px solid #eee ;
+	width: 540px;
+	margin: 10px auto;
+	position: relative;
+}
+.clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden}
+        .clearfix { *height:1%;}
+/*a{
+	text-decoration: none;
+	border: 1px solid silver;
+	height: 10px;
+	width: 20px;
+	display: inline-block;
+	background: #EEEEEE;
+	color: black;
+	float: right;
+	padding-left: 10px;
+	padding-top: 5px;
+}*/
+.close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 28px;
+	height: 28px;
+	border: 1px solid #EEEEEE;
+	background: #f2f4f7;
+	line-height: 28px;
+	text-align: center;
+	text-decoration: none;
+	display: none;
+}
+.close:hover{
+	text-decoration: underline;
+}
+.box:hover .close{
+	display: block;
+}
+.head{
+	float: left;
+	margin-top: 10px;
+	width: 60px;
+	height: 60px;
+}
+.content{
+	margin: 10px 0;
+	float: left;
+	width: 440px;
+}
+.main{
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.text{
+	margin-bottom: 10px;
+}
+.pic{
+	float: left;
+	/*margin-left: 10px;*/
+	width: 200px;
+}
+.info .time{
+	background: url(../img/bg1.jpg) no-repeat;
+	top: 0;
+	left: 0;
+	padding-left: 20px;
+	padding-top: 2px;
+}
+.info{
+	/*padding-top: 10px;*/
+	color: #ccc;
+	margin-bottom: 10px;
+}
+.info .priase{
+	float: right;
+	color: #369;
+	background: url(../img/bg2.jpg) no-repeat;
+	padding-left: 20px;
+}
+.priase:hover {
+	background: url(../img/bg3.jpg) no-repeat;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.totol_praise{
+	background: ;
+}
+.priase_t{
+	background: url(../img/bg2.jpg) no-repeat 2px center rgb(247, 247, 247);
+	margin-bottom: 10px;
+	padding: 8px 0;
+}
+/*.priase_t::after{
+	content: " ";
+	border: 1px solid solid;
+	height: 1px;
+	background: black;
+	
+}*/
+.priase_t .txt{
+	padding-left: 20px;
+}
+.sm_head{
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	padding-top: 5px;
+}
+.comment_list{
+	border-top: 1px solid #EEEEEE;
+	padding-top: 10px;
+}
+.comment_content{
+	/*float: left;*/
+	width: 440px;
+	padding: 5px 0 5px 0;
+	
+}
+.comment_content:hover{
+	background:  rgb(247, 247, 247);
+
+}
+.me .my{
+	color: #336699;
+
+}
+.comment_content_time{
+
+	margin-top: 3px;
+	color: #CCCCCC;
+}
+.priase_content{
+	text-decoration: none;
+	background: url(../img/bg2.jpg) no-repeat left center;
+	padding-left: 20px;
+	right: 121px;
+	position: absolute;
+	color: #336699;
+}
+.priase_content:hover{
+	text-decoration: underline;
+	
+}
+.delete{
+	position: absolute;
+	right: 68px;
+	color: #369;
+	text-decoration: none;
+	display: none;
+	
+}
+.comment_content:hover .delete{
+	display: inline-block;
+}
+.delete:hover{
+	text-decoration: underline;
+}
+.text_box{
+	width: 450px;
+	margin-top: 10px;
+}
+.text_box .textbox{
+	border: 1px solid #EEEEEE;
+	color: #CCCCCC;
+	padding-left: 5px;
+	width: 440px;
+	resize: none;
+	height: 20px;
+}
+.btn{
+	background: #336699;
+	color: white;
+	font-weight: bold;
+	width: 60px;
+	height: 30px;
+	font-size: 12px;
+	float: right;
+}
+
+
+
+
+

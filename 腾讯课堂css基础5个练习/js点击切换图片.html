@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js点击切换图片</title>
+		<style type="text/css">
+			#div1 img{
+				width: 400px;
+				height: 300px;
+			}
+			#div2 img{
+				width: 70px;
+				height: 50px;				
+			}
+			#div2 img:hover{
+				cursor: pointer;				
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var div1= document.getElementById('div1');
+				var div2 =document.getElementById('div2');
+				var imgs =div2.getElementsByTagName('img');
+				var bigImg=div1.getElementsByTagName('img')[0];
+				
+				for (var i=0,len=imgs.length;i<len;i++) {
+					imgs[i].onclick=function  () {
+						bigImg.src=this.src;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<img src="img/1.jpg" id="big"/>
+		</div>
+		<div id="div2">
+			<img src="img/1.jpg"/>
+			<img src="img/2.jpg"/>
+			<img src="img/3.jpg"/>
+			<img src="img/4.jpg"/>
+			<img src="img/5.jpg"/>
+		</div>
+	</body>
+</html>

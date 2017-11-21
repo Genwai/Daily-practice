@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			span{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>focus:表示是元素在获取焦点：一般会有高亮显示，电线环绕</li>
+			<li>当打开页面的时候就显示，光标在text</li>
+		</ul>
+		<input type="text" name="" id="target" value="" placeholder="text"/><span class="ss">like you</span>
+		<input type="password" name="" id="test" value="" placeholder="password"/><span class="dd">like you</span>
+	</body>
+	<script type="text/javascript">
+		$('#target').focus(function  () {
+			console.log('focus是点击了就显示')
+		})
+		$('other').click(function  () {
+			$('#target').focus()
+		})
+		$('#target').focus(function  () {
+			$(this).next('span').css('display','inline');
+		$('.dd').css('display','none');
+			
+		})
+		$('#test').focus(function  () {
+			$(this).next('span').css('display','inline');
+			
+		$('.ss').css('display','none');
+		})
+
+	</script>
+	<script type="text/javascript">
+		$(function () {
+			$('#target').focus()
+		})
+		
+	</script>
+</html>

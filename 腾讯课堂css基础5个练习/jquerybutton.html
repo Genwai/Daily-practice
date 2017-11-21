@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		.back{
+			background: salmon;
+			display: flex;
+		}
+	</style>
+	</head>
+	<body>
+		<form action="" >
+			<fieldset id="">
+				<input type="button" id="" value="Input button" />
+				<input type="checkbox" name="" id="" value="" />
+				
+				<input type="file" name="" id="" value="" />
+				<input type="hidden" name="" id="" value="hiddesdan" />
+				<input type="image" name="" id="" value="sdf" />
+				
+				<input type="password" name="" id="" value="" />
+				<input type="radio" name="" id="" value="" />
+				<input type="reset" name="" id="" value="重置" />
+				
+				<input type="submit" name="" id="" value="submit" />
+				<input type="text" name="" id="" value="" />
+				
+				<textarea>sdf</textarea>
+				<button>button</button>
+				<div id="">
+					
+				</div>
+			</fieldset>
+			<!--<input type="submit" value=""/>-->
+		</form>
+		<script type="text/javascript">
+			var $input = $(':input').addClass('back');
+			$('div').text('这是jquery:所有input 的长度' + $input.length +'.');
+			$('form').submit(function  () {
+				return false;//编程普通的button
+			})
+//			alert($input.length);//12
+		</script>
+	</body>
+</html>

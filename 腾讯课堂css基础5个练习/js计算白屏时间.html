@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			//测试时间起点
+			var starTime = new Date();
+		</script>
+		<title>白屏时间</title>
+		<link rel="stylesheet" type="text/css" href="css/设置列表样式.css"/>
+		<script type="text/javascript">
+			//测试时间的结束点
+			var endTime =new Date();
+		</script>
+	</head>
+	<body>
+		<h2>白屏时间</h2>
+		<p>浏览器在加载页面的刚开始，页面是处于空白的状态，只有当页面发生绘制操作时会开始显示内容。
+浏览器加载页面是一个渐进的过程。为达到更好的用户体验，呈现引擎会力求尽快将内容显示在屏幕上。它不必等到整个 HTML 文档解析完毕之后，就会开始构建呈现树和设置布局。在不断接收页面内容的同时，呈现引擎会将部分内容解析并显示出来。
+非可视化的 DOM 元素不会显示到窗口中，例如 <head>，这就意味着浏览器在绘制之前，至少需要先解析完head元素中的内容。</p>
+	<ul>
+		<li>统计首屏内图片完成加载的时间</li>
+	</ul>
+	</body>
+	<script type="text/javascript">
+//		console.log(+new Date())
+		var baiping = endTime - performance.timing.navigationStart;
+		console.log(baiping)
+		//如果有兼容性的话，开始应该放在meta之后，开始计算开始时间
+	</script>
+	<!--业务中如何计算白屏和首屏时间-->
+	<script type="text/javascript">
+		//由于performance API 是在谷歌中的API（后面有很多的.显示出来）
+		//首屏时间
+//		就是根据首屏时间
+	</script>
+</html>

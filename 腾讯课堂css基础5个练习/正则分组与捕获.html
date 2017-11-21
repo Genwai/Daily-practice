@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>分组与捕获</h1>
+		分组
+		<ul>
+			<li>捕获型分组</li>
+			<ul>
+				<li>引用</li>
+				<li>反向引用</li>
+			</ul>
+			<li>非捕获型分组:<span style="color: red;font-weight: 900;">(?:)</span></li>
+		</ul
+		
+	</body>
+<script type="text/javascript">
+//	var reg1 =/010101/;
+//	var reg2 =/(01){3}/;
+//	var reg3 =/jero love (coding|girl)/ //或者
+	var reg4 = /(jero) love (?:codding|girl)/
+//	console.log(reg1.exec('20010101'));//EXEC方法
+//	console.log(reg2.exec('20010101'));
+//	console.log(reg3.exec('jero love coding'))
+	console.log(reg4.exec('jero love girl'))
+	//reg4[1],在这个数组中1：是代表着 分组的内容，
+	console.log(reg4.exec('jero love girl')[1],'b',RegExp.$1);
+	
+	
+	
+</script>
+<script type="text/javascript">
+	var ret =/<div>.*<\/div>/;
+	//方向引用-是为了 出现了两个div 不好
+//	捕获自己想要的东西。我目前还不知道有什么用呀
+	var ret1 =/<div>.*<\/\1>/; //在正则中引用
+	console.log(ret.test('<div>...dsdds.</div>'));
+	console.log(ret1.test('<div>genwai</div>'));
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<p>javascript 事件绑定一个处理函数；或者触发元素上的‘change’事件</p>
+		<ul>
+			<li>一个元素的值改变的时候将触发change事件。此事件仅限用于input元素，textarea和select元素</li>
+			<li>对于下拉选择框，复选框和单选按钮，当用户用鼠标作出选择，该事件立即触发，但对于其他类型的input元素，该事件触发将推迟，直到元素失去焦点才会触点。</li>
+		</ul>
+		<input type="text" name="" class="target" value="" />
+		<select class="target" multiple="multiple">
+			<option value="option1" >橡胶</option>
+			<option value="option2" selected="selected">苹果</option>
+			<option value="option2" selected="selected">niubi</option>
+			<option value="option2" selected="selected">lihai</option>
+			<option value="option2" selected="selected">果</option>
+			<option value="option2" selected="selected">蔬菜</option>
+			<option value="option2" selected="selected">苹</option>
+			<option value="option2" >苹果果</option>
+		</select>
+		<div class="mm">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		$('.target').change(function  () {
+			var str="";
+			$('select option:selected').each(function  () {
+				
+				str = str + $(this).text();
+				
+			})
+			
+			$('.mm').text(str)
+			
+			
+		})
+		$('.target').change()
+	</script>
+</html>

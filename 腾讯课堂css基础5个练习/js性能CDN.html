@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>B部署CDN服务</h3>
+		<h2>前端工程静态资源部署</h2>
+		<ul>
+			<li>将静态资源部署到不同网络线路的服务器中</li>
+			<li>加载静态资源时需使用与页面不同的域名</li>
+			<p>使用不同的域名来加载 CDN 服务的静态资源，
+				一方面便于接入为 CDN 时设置 DNS 的智能解析。
+			另一方面当静态资源和主页面使用不同的域名，
+			，在加载静态资源时 HTTP 请求并不会带上主域页面的 Cookie 等数据，
+			较少了请求时的数据传输量，进一步加快网络访问。
+			</p>
+			<li><script src="js/script.js"></script>
+				<p>要改为<script src="http://xxx.xxx.xxx/js/script.js"></script></p>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.dog-container{
+				background: red;
+				position: relative;
+				width: 200px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		上面例子告诉我们，并不是所有情况 z-index 值大的元素都会在上面，我们在进行 z-index 比较的时候要留意其祖先元素有没有建立独立的层叠上下文，z-index 只有在同一个层叠上下文中比较才有意义。另外，对定位元素设置 z-index 属性不是唯一创建层叠上下文的方法
+		<div class="dog-container">
+		  <img class="dog" src="http://coding.imweb.io/img/p3/z-index/dog.png" alt="dog">
+		</div>
+		<div class="cat-container">
+		  <img class="cat" src="http://coding.imweb.io/img/p3/z-index/cat.png" alt="cat">
+		</div>
+	</body>
+</html>

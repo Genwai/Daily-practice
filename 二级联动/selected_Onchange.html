@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+	</head>
+	<body>
+		<select name="mySelected" id="mySelected" onchange="javascript:showMsg(this)">
+			<option value="">...请选择...</option>
+			<option value="1">水果</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select>
+		<select name="mySelected1" id="mySelected1">
+			<option value="">苹果</option>
+		</select>
+		<script type="text/javascript">
+			$(document).ready(function  () {
+				$("#mySelected1").hide();
+				$("#mySelected").change(function  () {
+					if ($(this).val() == 1) {
+					$("#mySelected1").show();	
+					}else if($(this).val() !== 1){
+						$("#mySelected1").hide();
+					}
+				})
+			
+			
+			})
+				
+				
+				//写事件，后面都需要像方法一样要重新执行以下
+				
+			
+
+
+//		function showMsg (this) {
+//			var opt =this.option[this.selectedIndex];
+//			alert("列表的第几个呢?" + this.text +"(" +this.value+")");
+//		}
+//		
+		</script>
+	</body>
+</html>

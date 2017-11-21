@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>在严格模式不能使用：let</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		var  message= 'hello genwai';
+		var o={
+			name:'genwai',
+
+
+		}
+		function showName (value) {
+
+			value ='genwai1';
+			alert(value);
+			alert(arguments)
+		}
+//		showName('genwai');
+		function doSomething () {
+			"use strict"
+			eval("var x= 10");//严格模式下，不会创建X，所以跑出异常显示 没有dingyi
+			alert(x);
+		}
+		doSomething()
+	</script>
+</html>

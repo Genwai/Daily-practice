@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.liToggles{
+				background: chartreuse;
+				color: saddlebrown;
+				
+			}
+			.ulstyle{
+				background: saddlebrown;
+			}
+			.ab1{
+				background: darkblue;
+				color: white;
+			}
+			.wrap > div { float: left; width: 100px; margin: 1em 1em 0 0;
+              padding=left: 3px; border: 1px solid #abc; }
+			div.a { background-color: aqua; }
+			div.b { background-color: burlywood; }
+			div.c { background-color: cornsilk; }
+		</style>
+	</head>
+	<body>
+		<p>在匹配原色集合中的每个元素上添加或删除一个或者多个样式类，取决于这样样式是否存在
+		或切换属性。</p>
+		<ul >
+			<li class="s liToggles">即：存在就删除，不存在就添加</li>
+			<li class="ab2 " >领略each功能  <span>click:0</span></li>
+			<li class="ab2">领略each功能  <span>click:0</span></li>
+			<li class="ab2 liToggles">领略each功能  <span>click:0</span></li>
+			<li class="ab2">领略each功能  <span>click:0</span></li>
+		</ul>
+		<div class="buttons">
+			<button>toggle</button>
+			<button class="a">toggle a</button>
+			<button class="a b">toggle a b</button>
+			<button class="a b c">toggle a b c</button>
+			<a href="#">reset</a>
+		</div>
+		<div class="wrap">
+			<div id=""></div>
+			<div class="b"></div>
+			<div class="a b"></div>
+			<div class="a c"></div>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+//		$('li').click(function  () {//没有选中哪一个是所有全部匹配
+//		$(this).toggleClass('liToggles')
+//			$(this).parent().toggleClass('ulstyle');//因为会继承
+//		})
+		
+		$('li').each(function  () {
+			var $this =$(this);
+			var count=0;
+			$this.click(function  () {
+				count +=1;
+				$this.find('span').text('click' + count);
+				
+					$this.toggleClass('ab1',count ==2);
+				
+			})
+		})
+		
+	</script>
+	<script type="text/javascript">
+		var cls=['','a','a b','a b c'];
+		var divs =$('.wrap').children();
+		var appendClass =function () {
+			divs.append(function  () {
+				return '<div>'+ (this.className || 'none') +'</div>';
+			})
+		}
+		appendClass();
+	</script>
+</html>

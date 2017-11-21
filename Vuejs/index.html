@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{ message}}</p>
+		</div>
+		<div class="app2">
+			<span v-bind:title="message">
+				鼠标悬停几秒查看此动态绑定信息
+			</span>
+		</div>
+		<div id="app3">
+			<p v-if="ok">现在你看到我</p>
+		</div>
+		<div id="app4">
+			<ul>
+				<li v-for="td in tds">{{td.text}}</li>
+			</ul>
+		</div>
+		<div class="app5">
+			<p>{{content}}</p>
+			<button v-on:click="reverseMessage">逆转消息</button>
+		</div>
+		<div class="app6">
+			<p>{{name}}</p>
+			<input type="text" v-model="name"  id="" value="" />
+		</div>
+	</body>
+<script type="text/javascript">
+	var s= new Vue({
+		el:'#app',
+		data:{
+			message:'hello vuejs',
+		}
+	})
+	var app2= new Vue({
+		el:'.app2',
+		data:{
+			message:'页面加载与'+ new Date().toLocaleString(),
+		}
+	})
+	
+</script>
+<script type="text/javascript">
+	var app3 =new Vue({
+		el:'#app3',
+		data:{
+			ok:true,
+		}
+	})
+	var app4 =new Vue({
+		el:'#app4',
+		data:{
+			tds:[
+			{text:'genwai'},
+			{text:'genwai2'}
+			]
+		}
+	})
+	app4.tds.push({text:'genwai3'});
+	
+</script>
+<script type="text/javascript">
+	var app5 =new Vue({
+		el:'.app5',
+		data:{
+			content:'genwai'
+		},
+		methods:{
+			reverseMessage:function  () {
+				this.content =this.content.split('').reverse().join('')
+			}
+		}
+	})
+</script>
+<script type="text/javascript">
+	var app6 =new Vue({
+		el:'.app6',
+		data:{
+			name:'app6设置'
+		}
+	})
+</script>
+</html>

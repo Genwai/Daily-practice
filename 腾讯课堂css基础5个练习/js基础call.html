@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>两个的方法的作用是相同，但是传参不一样</li>
+		<li>call():传递值//对象</li>
+		<li>bind():传递的是数组</li>
+		<li>使用构造函数调用this </li>
+	</ul>
+</body>
+<script type="text/javascript">
+	//传入匿名函数
+	var annimals = [{species:'lion',name:'king'},{species:'person',name:'age'}];//数组加对象
+	for (var i = 0; i < annimals.length; i++) {
+		(function  (i) {
+			this.print =function  () {
+//			console.log('#'+i+'' +this.species +':'+ this.name)	
+			}
+			this.print();
+		}).call(annimals[i],i)//.call(this,i)
+		
+	}
+	
+	
+</script>
+<script type="text/javascript">
+	//使用call调用函数；其实重点this zhixiang
+	function greet () {
+		var replay =[this.person ,'是一个牛逼人物',this.role].join(' ');
+		console.log(replay)
+	}
+	
+	var make={
+		person:'genwai',
+		role:'我爱死他了'
+	}
+	greet.call(make);
+//	console.log(greet.call(make));
+	
+	
+</script>
+</html>

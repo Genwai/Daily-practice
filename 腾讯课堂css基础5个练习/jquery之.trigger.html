@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	</head>
+	<body>
+		<button>+1</button>
+		<button>++1</button>
+		
+		<div id="">
+			<span>0</span>按钮1
+		</div>
+		<div id="">
+			<span>0</span>按钮2
+		</div>
+	</body>
+<script type="text/javascript">
+	$('button:first').click(function () {
+//		var n=parseInt($('span:first').text());
+//		n+=1;
+//		$('span:first').text(n);
+		update($('span:first'))
+	});
+	$('button:last').click(function () {
+		$('button:first').trigger('click');
+//		var n=parseInt($('span:last').text());
+//		n+=1;
+//		$('span:last').text(n);
+		update($('span:last'))
+	});
+	
+	//提炼代码
+	function update (x) {
+		var n=parseInt(x.text());
+		n+=1;
+		x.text(n);
+	}
+	
+</script>
+</html>

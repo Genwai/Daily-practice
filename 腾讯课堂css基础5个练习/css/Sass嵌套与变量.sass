@@ -1,0 +1,50 @@
+.box{
+    background:blue;
+    .boxChange{
+        color:red;
+    }
+}
+$blue = red;
+.boxChange{
+    background:$blue;
+    color:$blue;
+    
+}
+//mixin :主要例如下面
+//这是原生CSS代码，
+.header{
+    -moz-box-shadow:3px 4px #ccc;
+    -webkit-box-shadow:3px 4px #ccc;
+    box-shadow:3px 4px #ccc; 
+}
+
+//使用mixin代码
+@mixin box-shadow($shadow ...) {
+    -moz-box-shadow:$shadow;
+    -webkit-box-shadow:$shadow;
+    box-shadow:$shadow;
+    
+}
+.box {
+    @include box-shadow(2px 4px #ccc);
+}
+
+//下面是原来写的CSS代码
+.item-1 {
+  background: url(xxx/xxx/1.png);
+}
+
+.item-2 {
+  background: url(xxx/xxx/2.png);
+}
+
+.item-3 {
+  background: url(xxx/xxx/3.png);
+}
+
+//利用Sass写的代码
+@for $i from 1 to 4 {
+  .item-#{$i} {
+    background:url(xxx/xxx/#{$i}.png);
+  }
+}

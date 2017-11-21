@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				font-size: 80px;
+				text-align: center;
+			}
+			a{
+				display: block;
+				width: 80px;
+				height: 80px;
+				border: 1px solid silver;
+				text-decoration: none;
+				font-size: 30px;
+				text-align: center;
+				color: black;
+				padding-top: 20px;
+				position: fixed;
+				bottom: -100px;
+				right: 20px;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>乾</p>
+		<p>坤</p>
+		<p>大</p>
+		<p>挪</p>
+		<p>移</p>
+		<a href="javascript:;">回到顶部</a>
+	</body>
+	<script type="text/javascript">
+		var a =document.getElementsByTagName('a')[0];
+		var timer ;//定时器
+		var judgment =true;
+
+
+
+		window.onscroll=function  () {
+			if(!judgment){//当用户拖动滚动条时停止定时器
+		clearInterval(time);
+	}
+	judgment = false;
+	var top = document.documentElement.scrollTop || document.body.scrollTop;
+	if(top >= 400){
+		a.style.bottom = "20px";
+	}
+	else{
+		a.style.bottom = "-100px";
+	}
+			
+		}
+		function scroll() {
+			a.onclick=function  () {
+				clearInterval(timer);
+				timer =setInterval(function  () {
+					judgement=true;
+					var top =document.documentElement.scrollHeight || document.body.scrollHeight;
+					var speed =top/15;
+					if (top == 0) {
+						clearInterval(timer);
+					} else{
+						document.documentElement.scrollTop =document.body.scrollTop = top -speed;
+					}
+					
+					
+				},30)
+				
+				
+			}
+			
+			
+		}
+		scroll()
+	</script>
+</html>

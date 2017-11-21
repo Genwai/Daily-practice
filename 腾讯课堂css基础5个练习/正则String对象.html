@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				color: darksalmon;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>String能使用正则的方法</h1>
+		<h2>正则处理字符串</h2>
+		<!--tring.match-->
+		<ul>
+			<li>replace()</li>
+			<li>match()</li>
+			<li>split()</li>
+			<li>search()</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		//string.match
+		//reg.exec
+	var target3='abababa';
+	var reg2 =/(a)/g;
+	console.log(target3.match(reg2));//字符串的match可以把全部都找出来
+	console.log(reg2.exec(target3));//EXEC可以是找到第一个
+	/*这是replace的方法*/
+	var s='ababcs';
+	s= s.replace(/ab/g,'AB');
+	console.log(s);
+	
+	</script>
+	<script type="text/javascript">
+		var s1= 'gen  wa isbawo sh  ib ushidu idezhe yan gzi';
+		console.log(s1.split(' ')) ;
+		//你看如果空了两个格子：则会发生这种情况："gen,,wa,isbawo,sh,,ib,ushidu,idezhe,yan,gzi"
+		var s2='gen  wa isbawo sh  ib ushidu idezhe yan gzi';
+		var s22=s2.split(/\s+/g);//至少出现一次，出现了1次就不要。蟹蟹
+		console.log(s22);
+	</script> 
+	<script type="text/javascript">
+		//search
+		var s3='scsdfsdfadsfas';
+		console.log(s3.search('sc'));
+			s33= s3.search(/s(c|d)/g);
+			console.log(s33)
+	</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>浏览器内存相关perfromance.memory</h2>
+		<p>主要是对象包含了各种浏览器性能相关的信息如网站建立连接，DNS查询、DOM解析等各项数据，使我们
+		更为全面精确地了解网页性能的详细情况
+		</p>
+		<ul>
+			<li>usedJSHeapSize:表示所有被使用的js堆栈内存	</li>
+			<li>totalJSHeapSize:表示前js堆栈内存总大小</li>
+			<li>jsHeapSizeLimit：表示内存大小限制</li>
+			<li>//		timing.navigationStart:当浏览器窗口的前一个网页关闭,发生unload事件.如果没有上一个页面,这个值会和
+//		fetchStar 想听.通常我们也理解为准备加载新页面的起始时间</li>
+<li>//		timing.responseStart:接受到第一字节数据的时刻
+//		用户屏幕刚开始显示内容的时刻
+//		不滚动屏幕:能看到的内容加载完成的时间:首屏时间</li>
+		<li>performance.timing.redirectStart:当页面的重定向开始的时间。当重定向来自同一个域时，才会有这个属性，否则值为0</li>
+		<li>fetchStart:准备使用HTTP请求fetch页面时间</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var timing=performance.timing
+
+	</script>
+	<script type="text/javascript">
+//		var data=new Date('December 17, 1995 03:24:00');
+//		console.log(data)
+		var data=new Date();
+		var star=Date.now();
+		
+		console.log(star);
+	</script>
+</html>

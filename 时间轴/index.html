@@ -1,0 +1,129 @@
+<html>
+
+	<head>
+		<title>XXXX</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="css/qmLoader.css" />
+		<script src="js/layui.js" type="text/javascript" charset="utf-8"></script>
+		<link id="layuicss-skinlayercss" rel="stylesheet" href="http://dqmore.com/layui/css/modules/layer/default/layer.css" media="all">
+
+		
+			<div style="min-height: 100%;position: relative;height: auto !important;height: 100%;">
+				<div class="content animated fadeInRight">
+					<div class="box">
+						<div class="qm-timeline">
+							<div class="qm-timeline-title">
+								<span year="2017">2017</span>
+								<div class="qm-timeline-icon qm-bg-navy animated fadeInDown">
+									<i class="layui-icon">&#xe62f;</i>
+								</div>
+							</div>
+							<div class="qm-timeline-block">
+								<span class="">08-14</span>
+								<div class="qm-timeline-icon qm-bg-sliver animated fadeInDown">
+									<i class="fa fa-pencil-square-o"></i>
+								</div>
+								<div class="qm-timeline-content fadeInRight animated ">
+									<a href="">
+										<h2>版本：3.0.7</h2>
+										<h3>增加插件获取安装包版本 </h3>
+									</a>
+								</div>
+							</div>
+							<div class="qm-timeline-block">
+								<span class="left">11-18</span>
+								<div class="qm-timeline-icon qm-bg-sliver animated fadeInDown">
+									<i class="fa fa-pencil-square-o"></i>
+								</div>
+								<div class="qm-timeline-content left fadeInLeft animated ">
+									<a href="/article/40">
+										<h2>layui闲聊处</h2></a>
+								</div>
+							</div>
+							<div class="qm-timeline-block">
+								<span class="">11-01</span>
+								<div class="qm-timeline-icon qm-bg-sliver animated fadeInDown">
+									<i class="fa fa-pencil-square-o"></i>
+								</div>
+								<div class="qm-timeline-content fadeInRight animated ">
+									<a href="/article/3">
+										<h2>创建PHP守护进程</h2></a>
+								</div>
+							</div>
+							<div class="qm-timeline-block">
+								<span class="left">10-31</span>
+								<div class="qm-timeline-icon qm-bg-sliver animated fadeInDown">
+									<i class="fa fa-pencil-square-o"></i>
+								</div>
+								<div class="qm-timeline-content left fadeInLeft animated ">
+									<a href="/article/2">
+										<h2>yii2中定制restful api</h2></a>
+								</div>
+							</div>
+							<div class="qm-timeline-block">
+								<span class="">10-29</span>
+								<div class="qm-timeline-icon qm-bg-sliver animated fadeInDown">
+									<i class="fa fa-pencil-square-o"></i>
+								</div>
+								<div class="qm-timeline-content fadeInRight animated ">
+									<a href="#">
+										<h2>创建svn服务器以及将原有项目导入方法</h2></a>
+								</div>
+							</div>
+						</div>
+						<div class="more">
+							<span style="display: inline;">没有更多啦...</span>
+							<div class="sk-spinner sk-spinner-wave" style="display: none;">
+								<div class="sk-rect1" style="display: none;"></div>
+								<div class="sk-rect2" style="display: none;"></div>
+								<div class="sk-rect3" style="display: none;"></div>
+								<div class="sk-rect4" style="display: none;"></div>
+								<div class="sk-rect5" style="display: none;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div id="login-wrap" style="display: none">
+					<div class="login-box">
+						<h2>Login For</h2>
+						<hr>
+						<div class="login-logo">
+							<a href="javascript:void(0);" onclick="oauth.login({redirect:''})"><i class="qm-icon" style="font-size: 50px"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function  () {
+					$('span:even').addClass('left');
+				})
+			</script>
+			
+			
+				<script>
+						layui.config({
+							version: '1.0.0',
+							base: 'layui/mods/'
+						}).use('archives')
+					</script>
+			<script>
+				paceOptions = {
+					restartOnRequestAfter: 1,
+					ajax: {
+						trackMethods: ['POST', 'GET']
+					}
+				}
+			</script>
+			<script src="/hplus/js/plugins/pace/pace.min.js"></script>
+			<script src="/js/base.js"></script>
+
+			<div class="layui-layer-move"></div>
+		</body>
+
+</html>

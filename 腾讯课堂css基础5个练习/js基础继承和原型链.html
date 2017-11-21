@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<ul>
+		<li>o._proto_
+			<p>理解：对象o具有自己属性；o._proto_【O的原型lian具有属性】</p>
+		</li>
+		<li>使用构造器：
+			<p>在 JavaScript 中，构造器其实就是一个普通的函数。
+			当使用 new 操作符 来作用这个函数时，它就可以被称为构造方法（构造函数）。</p></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var o={
+			a:2,
+			m:function  () {
+				return this.a+1;
+			}
+		}
+//	console.log(o.m())
+	var p =Object.create(o);//说明了P是一个对象，p._prot_指向o
+	
+	p.a =10;
+//	console.log(p.m())
+	// 调用 p.m 时, 'this'指向 p. 
+	// 又因为 p 继承 o 的 m 函数
+	// 此时的'this.a' 即 p.a，即 p 的自身属性 'a';
+	// 
+</script>
+<script type="text/javascript">
+	function Graph () {
+		this.vertces =[],
+		this.edges =[]
+	}
+	Graph.prototype ={
+		addvertces:function  (v) {
+			this.vertces.push(v);
+		}
+	}
+	var g =new Graph();
+	//首先理解一点：G是生成的对象
+//	g.prototype 指向的是Graph.prototype
+</script>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p>
+			<b>click</b>这是b后面<span id="tag">html</span>
+		</p>
+		<div id=""></div>
+		<div id=""></div>
+	</body>
+	<script type="text/javascript">
+		$('p').click(function  () {
+			var htmlStr =$(this).html();
+			$(this).text(htmlStr);
+		});
+		$('div').html('<b>你妹</b>呵呵哒');
+		$('div b').append(document.createTextNode('!!')).css('background','salmon')
+	</script>
+</html>

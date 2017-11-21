@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="calculator">
+			<div class="num">
+				{{ val }}
+			</div>
+			<button class="js-add" v-on:click="add(1)">+</button>
+			<button class="js-sub" v-on:click="sub(1)">-</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//这是model
+		var data ={
+			val:0
+		};
+		//这是viewmodel
+		new Vue({
+			el:'#calculator',
+			data:data,
+			methods:{
+				add(v) {
+					if (this.val <100) {
+						this.val += v;
+					}
+				},
+				sub(V){
+					if (this.val >0) {
+						this.val -= v;
+					}
+				}
+			}
+		});
+		
+	</script>
+</html>

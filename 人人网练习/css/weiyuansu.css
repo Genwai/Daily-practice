@@ -1,0 +1,57 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	font-size: 100px;
+}
+body{
+	font-size: 0.18rem;
+	background: #ebebeb;
+	font-family: "book antiqua";
+}
+.content{
+	width: 7rem;
+	margin: 0.01rem auto;
+	position: relative;
+}
+.box{
+	background: #fff;
+	position: relative;
+}
+.box h3{
+	padding-top: 0.10rem;
+	padding-left: 0.5rem;
+	line-height: .18rem;
+	font-size: .18rem;
+	margin-bottom: 0.10rem;
+	color: red;
+}
+.box p{
+	padding-left: 0.3rem;
+	line-height: .18rem;
+	font-size: .15rem;
+	margin-bottom: 0.10rem;
+	padding-bottom: 0.10rem;
+}
+.content::before{
+	content: "";
+	position: absolute;
+	left: 0.2rem;
+	top: 0.1rem;
+	z-index: 1;
+	border: 1px solid silver;
+	height:calc(100% - .3rem);
+	
+}
+.content .box::before{
+	content: "";
+	width: 0.20rem;
+	height: 0.20rem;
+	position: absolute;
+	background: red;
+	border-radius: 100%;
+	left: 0.1rem;
+	top: 0.08rem;
+	z-index: 2;
+}

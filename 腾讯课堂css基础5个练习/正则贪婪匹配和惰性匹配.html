@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>.是匹配任意字符，除了换行符</h1>
+		<h2>贪婪和惰性</h2>
+		<ul>
+			<li>贪婪(greedy)匹配：<a style="color: burlywood;text-decoration: underline;font-weight: 400;">普通量词：？+｛｝</a></li>
+			<li>惰性（lazy匹配）：普通量词加 <span style="background: saddlebrown;width: 20px;color: white;display: inline-block;text-align: center;">?</span></li>
+			<ul>
+				<li>非贪婪:non-greedy[]</li>
+			</ul>
+		</ul>
+	</body>
+<script type="text/javascript">
+	var s ='<span>hello</span><span>world</span>';
+	var reg =/<span>.+?<\/span>/;
+	//是匹配一段还是全部：称为贪婪匹配
+	console.log(reg.exec(s))
+</script>
+</html>

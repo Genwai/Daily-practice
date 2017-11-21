@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<ul>
+			<li>keydown:当用户在一个元素上第一次按下键盘上的键的时候，keydown事件，就会发送这个元素</li>
+		</ul>
+		<form action="" method="post">
+			
+			<input type="text" name="target" id="targetvalue" >
+		</form>
+	</body>
+<script type="text/javascript">
+	$('#target').keydown(function(){
+		alert('genwai');
+	});
+</script>
+</html>

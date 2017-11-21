@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var obj ={
+			a:1,
+			b:2,
+			c:3
+		}
+		//在这里先定义了属性：prop 属性值： obj[prop]
+		for (var prop in obj) {
+			console.log("obj." + prop + '=' + obj[prop]);
+		}
+		//hasOwnProperty()的用法：隐藏的继承属性将不会显示：
+		
+		var transgenle={
+			a:1,
+			b:2,
+			c:3
+		};
+		function colorNameTangele () {
+			this.color='red';
+		}
+		colorNameTangele.prototype=transgenle;
+		var colorname = new colorNameTangele();
+		for (var obj in colorname) {
+			if (colorname.hasOwnProperty(obj)) {
+				console.log('colorname.' + colorname[obj]);
+			}
+		}
+		
+	</script>
+</html>

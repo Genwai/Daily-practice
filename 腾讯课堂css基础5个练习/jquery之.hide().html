@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<button id="hide">HIDE</button>
+		<button id="show">SHOW</button>
+		<p>here is another page</p>
+		<span>Once</span> <span>upon</span> <span>a</span>
+  		<span>time</span> <span>there</span> <span>were</span>
+  		<span>three</span> <span>programmers...</span>
+	</body>
+	<script type="text/javascript">
+		$('p').click(function  (event) {
+			event.preventDefault()//阻止默认发生的行为：例如，当点击提交按钮时阻止对表单的提交
+			$(this).hide('slow')
+		})
+		$('#hide').click(function  () {
+			$('span:last-child').hide('fast',function  () {
+				$(this).prev().hide('fast',arguments.callee);//重新调用这个函数,现在已经不能使用了
+			});
+//			$('span').hide('slow')
+		});
+		$('#show').click(function(){
+			$('span').show(2000)
+		})
+	</script>
+</html>

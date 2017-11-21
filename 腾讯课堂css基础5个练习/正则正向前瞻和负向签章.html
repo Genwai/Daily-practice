@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		s
+	</head>
+	<body>
+		<i>正向前瞻:look ahead positive assert ？=</i>
+		<i>负向前瞻:look ahead negative assert ？！</i>
+		零宽断言 
+		<p><strong>在正则中空格：/s</strong></p>
+	</body>
+	<script type="text/javascript">
+//		var ret =/ jero (?= love codding)/ ;/*这里是匹配的是 love coding*/
+//		var ret1 =/ jero (?! love girl)/;
+//		
+//		var ret2= /?= love coding/ ;// 这里是匹配位置^ $ /b? 都是匹配位置的哟
+//		var ret3 =/?! love girl/;//
+		
+	</script>
+	<script type="text/javascript">
+		var reg1 =/jero(?=\slove\scoding)/g;
+		var reg2 =/jero(?!\slove\sgirl)/g;
+		var target ='jero love coding jero love girl jero love coding jero love talking';
+		console.log(target.match(reg2));//只有后面不love girl 都不是girl
+		
+		//真正开发中需要处理的是：
+		var traget2= 'img.jpg style.css scritp.js hello.jpg';
+//		var reg3 =/^[a-z]*\.jpg$/g; //肯定是全局
+		var reg3 =/\b(\w+)(?=\.jpg)\b/g;
+		//只要img 不需要右面.jpg
+		console.log(traget2.match(reg3))
+	</script>
+</html>

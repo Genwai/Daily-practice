@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>来个链接</h1>
+		<ul>
+			<li>s:可以不存在</li>
+			<li>1、com/后面存在、不存在字符都行</li>
+			<li>2、com/必须有字符</li>
+		</ul>
+	</body>
+	<!--匹配邮箱：-->
+	<script type="text/javascript">
+		var remail =/^[0-9a-z\.]+@[0-9a-z\-.]+$/;
+		//前面一点表示有什么乱起八糟都是可以通过的
+		//^ $限定了字符特征:表示正则的开始与结束
+		///^[0-9a-z\.]@[0-9a-z\-.]$/如果只有一个字符的话：g@q是true
+		var email ='genwai@qq.com';/*出现两个符号也是可以*/
+//		console.log(remail.test(email))
+//什么重复都没有加
+//0
+//		console.log(/^\w{3}$/.test('333'));
+	</script>
+	<script type="text/javascript">
+		//巧妙利用规则
+		var reg =/^https?:\/\/ke\.q{2}\.com\/$/;/*这是匹配第一个*/
+		//输入https://
+//		console.log(reg.test('http://ke.qq.com/'));
+		var reg =/^https?:\/\/ke\.q{2}\.com\/.+$/;
+		//.必须在后面写上去，他是匹配任何字符的
+		console.log(reg.test('http://ke.qq.com/s'))
+//		第二个*｛存在或者不存在都可以｝
+	</script>
+</html>

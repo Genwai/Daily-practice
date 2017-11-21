@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	var rSpan = /<span>.*?<\/span>/g; // 正则写在这里
+	var s = '<strong>coding..$sf</span> is <span>interes^[+-ting</span><strong>codi_#ng</span> is <span>interesting</span><strong>co@ding</span>@ is@ <span>interesti$$ng</span><strong>c--oding</span> is <span>interesting</span>&&&<strong>coding</span> is <span>interesting</span>';
+	
+	// 下面的变量，其结果都要符合预期
+	var ret = s.match(rSpan);
+	var length = ret && ret.length; // 根据这个来判断对错的
+	console.log(length);
+	</script>
+</html>

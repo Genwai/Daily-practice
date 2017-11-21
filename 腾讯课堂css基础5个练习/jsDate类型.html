@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function addZero (num) {
+			return num>9 ? num :'0'+num;
+		}
+		function dateForm (date) {
+			var data =data? new Date(date) :new Date() ;
+			var str =data.getFullYear() + '-'+ addZero(data.getMonth()+1) + '-' +addZero(data.getDay()) + ' ';
+//			console.log(str);
+			return str;
+		}
+		dateForm();
+	</script>
+</html>

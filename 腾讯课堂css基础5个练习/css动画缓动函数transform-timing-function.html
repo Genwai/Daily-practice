@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.easy ,.linear,.eadyin,.eadyout,.eadyinout{
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: salmon;
+				margin-top: 20px;
+				transition: all 2s;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				background: gold;
+			}
+			.easy:hover{
+				transform: rotate(20px);
+				/*transition-timing-function: ease;*/
+				tr	
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h2>transition-timing-function：运动轨迹的方向</h2>
+		<table border="1px solid silver" cellspacing="0" cellpadding="0">
+			<tr><th>值</th>
+				<th>描述</th>
+			</tr>
+			<tr><td>easy</td>
+				<td>规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）</td>
+			</tr>
+			<tr>
+				<td>linear</td>
+				<td>相同速度开始，最后以相同速度结束</td>
+			</tr>
+			<tr>
+				<td>easy-in</td>
+				<td>慢速度开始，突然最后停下；（缓入）</td>
+			</tr>
+			<tr>
+				<td>easy-out</td>
+				<td>慢速度结束</td>
+			</tr>
+			<tr>
+				<td>easy-in-out</td>
+				<td>慢速度开始、结束</td>
+			</tr>
+			
+		</table>
+		<div class="box">
+			<div class="easy"></div>
+			<div class="linear"></div>
+			<div class="eadyin"></div>
+			<div class="eadyout"></div>
+			<div class="eadyinout"></div>
+		</div>
+		
+		
+	</body>
+</html>

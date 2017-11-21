@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				font-family: "arial narrow";
+				font-size: 12px;
+			}
+			h1{
+				font-size: 1.5em;
+				
+			}
+			h2{
+				font-size: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>你好</h1>
+		<h2>alaso</h2>
+		<a href="#" id="16size">16size</a>
+		<a href="#" id="20size">20size</a>
+		<a href="#" id="26size">26size</a>
+		<p id="help">神奇的鬼笔记将会出现在这里</p>
+		<p>E_mail:<input type="email" name="" id="email" value="" /> </p>
+		<p>Name: <input type="text" name="name" id="name" value="" /></p>
+		<p>Age: <input type="text" name="age" id="age" value="" /> </p>
+	</body>
+	<script type="text/javascript">
+		//词法作用域
+		function Init () {
+			var  name ='genwai';
+			function Initinner () {
+				alert(name);
+			};
+			Initinner();
+		}
+//		var init =new Init();
+//		init();//Uncaught TypeError: init is not a function 但是可以执行一次弹框
+		
+		//闭包
+		function Init(){
+			var name='genwai1';
+			function Initnner () {
+				alert(name);
+			};
+			return Initnner;
+		}
+		var init =new Init();
+//		init();
+		
+		//更有意思的闭包
+		function makeAdder (x) {
+			return function  (y) {
+				return x + y;
+			}
+		}
+		var add1 = new makeAdder(5);
+		var add2 =new makeAdder(10);
+		
+//		console.log(add1(5));
+//		console.log(add2(5));
+		
+	
+		
+	</script>
+	<script type="text/javascript">
+
+			//实用的闭包
+			function makeSize (size) {
+				return function  (y) {
+					document.body.style.fontSize = size + 'px';
+				}
+			}
+			var makesize16 =new makeSize(16);//实例化一个对象
+			var makesize20 =new makeSize(20);
+			var makesize26 =new makeSize(26);
+			
+			document.getElementById('16size').onclick=makesize16;
+			document.getElementById('20size').onclick=makesize20;
+			document.getElementById('26size').onclick=makesize26;
+			
+	</script>
+	<script type="text/javascript">
+		//实用闭包定义公共函数	
+		var Counter = function () {
+			var privateCount =0;
+			function changBy (val) {
+				privateCount += val;
+			};
+			return {
+				increment: function  () {
+					changBy(1);
+					//由于这里没有写return语句，所以一直执行
+					return privateCount;
+				} ,
+				descrement:function  () {
+					changBy(-1);
+				},
+				value:function  () {
+					return privateCount;//输出priveteCount
+				}
+			}
+		}
+		var counter =new Counter();
+//		console.log(counter.increment())
+//		console.log(counter.value());
+//		
+//		console.log(counter.increment())
+//		console.log(counter.value());
+		
+//		console.log(counter.increment());
+//这种形式的闭包提供了许多通常由面向对象编程U所享有的益处，尤其是数据隐藏和封装。例如第三控件
+	</script>
+	<script type="text/javascript">
+		function showHelp (heip) {
+			document.getElementById('help').innerHTML =heip;
+		}
+		
+		function makeHelpCallback (help) {
+			return function  () {
+				showHelp(help);
+			}
+		}
+		
+		function setupHelp () {
+			var helpText = [
+      {'id': 'email', 'help': 'Your e-mail address'},
+      {'id': 'name', 'help': 'Your full name'},
+      {'id': 'age', 'help': 'Your age (you must be over 16)'},
+      {
+      	'id': 'age1', 'help': 'Your age (you must be over 16)1'
+      }
+    ];
+    
+    	for (var i = 0; i < helpText.length; i++) {
+    		var item= helpText[i];
+//  		document.getElementById(item.id).onfocus =function  () {
+//  			showHelp(item.help);
+//  		//在onfocus的回调被执行是，循环已经结束了
+//  		}
+			document.getElementById(item.id).onfocus= makeHelpCallback(item.help)
+    	}
+		}
+		setupHelp()
+	</script>
+</html>

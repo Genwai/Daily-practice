@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p index ='5'>jquery+<em title="name likeyou">nihao Attr</em></p>
+	</body>
+	<script type="text/javascript">
+		var $title = $('em').attr('title');
+		$('p').attr('index',6);
+		document.write($('p').attr('index'))
+		$(document.body).append('<div>'+ $title +'</div>');
+	</script>
+</html>

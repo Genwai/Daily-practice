@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			span{
+				display: none;
+				
+			}
+			#big{
+				height: 100px;;
+				overflow: scroll;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>它适用于window对象，但也可以是滚动iframe与css:overflow</li>
+		</ul>
+		<div id="big">
+		<p>我是：<span>genwai</span> </p>
+			
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		$('p').clone().appendTo(document.body);
+		$('p').clone().appendTo(document.body);
+		$('window').scroll(function  () {
+			$('span').css('display','inline').fadeOut('slow')
+		})
+	</script>
+</html>

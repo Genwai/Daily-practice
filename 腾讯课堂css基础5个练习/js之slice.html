@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>slice()方法返回一个开始到结束，选择的数组的一部分qian拷贝到一个新的数组的西乡，原始数组不会被修</li>
+			<li>语法：其实就是数组，都是从开开始</li>
+			<li>只会返回一个新的数组，不会改变数组</li>
+			<li>从对象或者从数组截取新的数组，当修改其属性，会重现获取改变</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var a =['zero','one','two','three','four'];
+		var sliced =a.slice(1,3); //因为第三个是不包括的 []）
+		var slice1=a.slice(3);
+		var slice =a.slice();
+//		console.log(slice);
+//		console.log(slice1);
+//		console.log(sliced);
+	</script>
+	<script type="text/javascript">
+		var myHonda ={color:'red',name:'genwai',age:32,mark:{name:'genwai1',age:23}}
+		var mayCar=[myHonda,'shabi','name','catch'];
+		var newCar =mayCar.slice(0,2);
+		
+//		console.log(JSON.stringify(myHonda));
+//		console.log(JSON.stringify(mayCar))
+////		console.log(newCar)
+		console.log(JSON.stringify(newCar))
+//		
+////		myHonda.color='blue';
+//		mayCar[0].color='blue'
+//		console.log(JSON.stringify(mayCar))
+//		console.log(JSON.stringify(newCar))
+		
+		
+	</script>
+	<script type="text/javascript">
+		//类数组（Array-like）对象，将一个对象，转换成一个数组
+		function list () {
+			return Array.prototype.slice.call(arguments);
+		}
+		var list1=list(1,2,3);
+//		console.log(JSON.stringify(list1));//成功转换成数组
+		//另一个方法
+		var unboundSlice = Array.prototype.slice;
+var slice = Function.prototype.call.bind(unboundSlice);
+
+//function list() {
+//return slice(arguments);
+//}
+//		var list1 =list1(1,2,3)
+//		console.log(JSON.stringify(list1));
+//		
+		
+		
+		
+	</script>
+</html>
