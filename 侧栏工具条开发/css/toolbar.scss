@@ -1,0 +1,77 @@
+$toolbar-size :52px;
+
+.toolbar {
+	position: fixed;
+	left:50%;
+	bottom:5px;
+	margin-left:-$toolbar-size / 2;//注意要空格
+
+}
+.toolbar-item {
+	positon:relative;
+	display: block;
+	width: $toolbar-size;
+	hight:$toolbar-size;
+	background-img:url(../img/toolbar.png);
+	background-position:no-repeat;
+	margin-top:1px;
+
+	&:hover {
+		.toolbar-layer{
+				opacity:1;
+				filter:	alpha(opacity=100);
+				transform:scale(1)
+						}
+	}
+}
+.toolbar-item-weixin {
+	background-position:0 -798px;
+
+	$:hover {
+		background-position:0 -860px;
+	}
+
+	.toolbar-layer {
+		height:212px;
+		background-podition: 0 0;
+	}
+}
+.toolbar-item-feedback {
+	background-position:0 -462px;
+
+	$:hover {
+		background-position:0 -488px;
+	}
+}
+.toolbar-item-app {
+	background-position:0 -550px;
+
+	$:hover {
+		background-position:0 -612px;
+	}
+
+	.toolbar-layer {
+		height:194px;
+		background-podition: 95% 95%;
+		transiform-origin:right bottom;
+	}
+}
+.toolbar-item-top {
+	background-position:0 -674px;
+
+	$:hover {
+		background-position:0 -736px;
+	}
+}
+.toolbar-layer {
+	positon: absolute;
+	right: $toolbar-size;
+	bottom: 0;
+	width:172px;
+	background-img:url(../img/toolbar.png);
+	background-repeat:no-repeat;
+	opacity: 0;
+	transform-origin: 95% 95%;
+	filter:	alpha(opacity=0);
+	transform:scal(0.001);
+}
