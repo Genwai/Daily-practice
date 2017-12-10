@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            margin-right: 10px;
+            background: rgba(0, 0, 0, 0.2)
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="ul-item">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+        <li>list item 6</li>
+    </ul>
+    <ul class="ul-item-list">
+        <li><strong>list</strong> item 1 - one strong tag</li>
+        <li><strong>list</strong> item <strong>2</strong> - two <span>strong tags</span></li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+        <li>list item 6</li>
+    </ul>
+    <div></div>
+    <div class="middle"></div>
+    <div class="middle"></div>
+    <div class="middle"></div>
+    <div class="middle"></div>
+    <div></div>
+</body>
+<script>
+    // 对一系列列表项进行操作
+    $('.ul-item li').filter(":even").css('color', 'red'); //1 3 5奇数
+</script>
+<script>
+    // 第二种形式允许我们对弈个函数而不是一个选择器过滤元素。,对每个元素，如果返回true,则会被包换
+    // 包含，否则被排除
+    $('ul-item-list li').filter(function(index) {
+        return $("strong", this).length === 1;
+    }).css('color', 'blue')
+</script>
+<script>
+    // 在进行选择。二度选择
+    $('div').css('background', 'yellow').filter('.middle').css('border', '1px solid red')
+</script>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Document</title>
 
 </head>
+
 <body>
     <div id="d">
         <h1>H1:删除代码示例</h1>
@@ -19,18 +21,17 @@
             <li class="h2">以及这个 li 元素</li>
             <li>6</li>
         </ul>
-  
+
 </body>
-    <script src="js/封装removeChild().js" type="text/javascript" charset="utf-8"></script>
+<script src="js/封装removeChild().js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-	//总结：在使用原生JS removeChild(); 父节点必须是 id[查找的元素]、class:都必须用的是循环；不像jquery 选择器可以直接选择
-	var h2 =document.getElementsByClassName('h2');
-//	var d=document.getElementById('d');
-	h2=Array.prototype.slice.call(h2)
-	for (var i=0,len=h2.length;i<len;i++) {
-		removeChild(h2[i]);
-	}
-		
-	
+    //总结：在使用原生JS removeChild(); 父节点必须是 id[查找的元素]、class:都必须用的是循环；不像jquery 选择器可以直接选择
+    var h2 = document.getElementsByClassName('h2');
+    //	var d=document.getElementById('d');
+    h2 = Array.prototype.slice.call(h2)
+    for (var i = 0, len = h2.length; i < len; i++) {
+        removeChild(h2[i]);
+    }
 </script>
+
 </html>

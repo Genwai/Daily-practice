@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <div id="five"></div>
+</body>
+<script type="text/javascript">
+    // $.each :通常遍历一个数组处理
+    $.each([{
+        name: 'genwai',
+        email: '1079096510@qq.com',
+    }, {
+        name: 'chen',
+        email: '2097518151@qq.com'
+    }, {
+        name: 'jianwei',
+        email: 'dont konw'
+    }], function(i, n) {
+        console.log('each索引i自带' + i + '对应的值' + n.name + ' ' + n.email)
+            //each索引i自带0对应的值genwai 1079096510@qq.com
+            //each索引i自带1对应的值chen 2097518151@qq.com
+            //each索引i自带2对应的值jianwei dont konw
+    })
+
+    var arr1 = ["one", "two", "three", "four", "five"];
+    $.each(arr1, function(i) {
+        // console.log(this);
+        // console.log(i);
+        // console.log(n);
+    })
+
+    var arr2 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+    $.each(arr2, function(i, item) {
+        console.log(item[0]); //输出的是1 4 7
+        console.log(item)
+    });
+
+    // 这是一个对象，每次传递会传递一个键值对
+    var obj = {
+        one: 1,
+        two: 2,
+        three: 3,
+        four: 4,
+        five: 5
+    };
+
+    $.each(obj, function(key, val) {
+        // console.log(obj[key])
+        console.log(key + ":" + val);
+        // console.log(val)
+
+    })
+</script>
+<script type="text/javascript">
+    // 无缝隙的遍历对象和数组
+    // $.each 实例 - 真实应用环境
+    var arrtest = ["one", "two", "three", "four", "five"];
+    var objtest = {
+        one: 1,
+        two: 2,
+        three: 3,
+        four: 4,
+        five: 5
+
+    }
+    $.each(arrtest, function(i, val) {
+        // console.log(val)
+        $('#' + val).text('mine id id ' + val);
+        return (val !== "three"); //傻逼：return 相当于console.log();输出的意思，但是有用判断的租用
+        // 但是return 是显示在页面中的
+    })
+    $.each(objtest, function(key, val) {
+            $('#' + key).append('+' + val)
+        })
+        // 用了append 是从后加入进去的
+</script>
+<script>
+    // jquery 的each 方法是通过js 里的call 方法实现的；
+    // 官方解释说：调用一个对象的一个方法，以另一个对象替换当前对象
+    // 相当于解释说“变换上下文 环境，也有说改变上下文指针”
+    // call([thisObj[,arg1[, arg2[,   [,.argN]]]]])
+    function add(a, b) {
+        alert(a + b);
+    }
+
+    function sub(a, b) {
+        alert(a - b);
+    }
+    add.call(sub, 3, 1); //4 //sub 被call 换成了 add
+    add.call(add, 3, 4);
+    sub.call(add, 5, 2); //add 被换成sub
+</script>
+
+</html>

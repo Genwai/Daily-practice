@@ -4,8 +4,15 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.dd {
+				color: ssaddlebrown;
+				background: skyblue;
+			}
+		</style>
 	</head>
 	<body>
+		<i class="icon-pic"></i>
 		<p>
 			<b>click</b>这是b后面<span id="tag">html</span>
 		</p>
@@ -18,6 +25,8 @@
 			$(this).text(htmlStr);
 		});
 		$('div').html('<b>你妹</b>呵呵哒');
-		$('div b').append(document.createTextNode('!!')).css('background','salmon')
+		$('div b').append(document.createTextNode('!!')).css('background','salmon');
+		
+		$('.icon-pic').html('<p class="dd">like you </p>')
 	</script>
 </html>

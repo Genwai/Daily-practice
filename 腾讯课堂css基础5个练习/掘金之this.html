@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>javacsript 中的函数有以下方式调用：作为函数调用，作为对象调用，作为构造函数调用，和使用 call或者play调用。在每种方式调用，含义都不同
+    </p>
+</body>
+<script>
+    /*  作为函数直接调用，要注意两种情况：
+                                                                                                                                                                                                                                                                 1、非严格模式 在非严格模式下执行调用，此时this 默认指向全局对象
+                                                                                                                                                                                                                                                                 */
+    function f1() {
+        return this;
+    }
+    // 在浏览器中
+    console.log(f1() === window); //true
+</script>
+<script>
+    'use strict'; //严格模式
+    function test() {
+        return this;
+        //this 将保持他进入执行上下文时的值，所以下面的 this 并不会指向全局对象，而是默认为 undefined 。
+
+    }
+    console.log(test() === undefined);
+</script>
+<script>
+    /* 作为对象的方法调用在 JavaScript 中，函数也是对象，因此函数可以作为一个对象的属性，此时该函
+                                                                                                                                                        数被称为该对象的方法，在使用这种调用方式时，内部的 this 指向该对象。        
+                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                 */
+    var obj = {
+        prop: 'genwai',
+        getprot: function() {
+            // console.log(this.prop);
+            return this.prop;
+        }
+    }
+    console.log(obj.getprot());
+
+    // 与下面例子等价
+    var Obj = {
+        prop: 'genwai',
+    };
+
+    function indenpendent() {
+        return this.prop; // 这个方法是没有放在Obj里，
+    }
+    Obj.getprot = indenpendent; //赋值的是函数
+    // Obj.getprot2 = indenpendent(); //这个是代表的是函数返回的值
+    // console.log(Obj.getprot(), Obj.getprot2());
+
+    //但是我们如果这样呢
+    var Obj2 = {
+            porp: 'genwai2',
+            getporp: function() {
+                return this.porp;
+            }
+        }
+        // var test = Obj2.getporp();
+    var test = Obj2.getporp; //这个栗子test 只是引用了Obj.getporp函数，
+    // 也就是说这个函数不作为Obj对象使用方法，所以他被当做一个普通函数调用，此时this指向全局变量
+
+
+    console.log(test());
+</script>
+<script>
+    // 一些坑：一直传的是全局变量
+    /*  */
+    var prop = 0;
+    var Obj3 = {
+        prop: 37,
+        getProp: function() {
+            setTimeout(function() {
+                alert(this.prop)
+            }, 1000)
+        }
+    }
+    Obj3.getProp(); //输出的是0;说明this 是全局变量
+
+    // 优化方法：
+    var prop = 0;
+    var Obj3 = {
+        prop: 37,
+        getProp: function() {
+            var self = this;
+            setTimeout(function() {
+                alert(self.prop)
+            }, 1000)
+        }
+    }
+    Obj3.getProp(); //37setTimeout 和 setInterval 都只是在全局上下文中执行一个函数而已，因此 this 指向全局对象。 除非你实用箭头函数，Function.prototype.bind 方法等办法修复。至于解决方案会在后续的文章中继续讨论。
+</script>
+<script>
+    /*
+                     javaScript 支持面向对象式编程，与主流
+                     的面向对象式编程语言不同，JavaScript 并没有类（class）
+                    的概念，而是使用基于原型（prototype）的继承方式。作为又一项约
+                    定通用的准则，构造函数以大写字母开头，提醒调用者使用正确的方式调用。
+                                        
+                                         */
+    /* 
+    当一个函数用作构造函数时（使用 new 关键字），
+    它的 this 被绑定到正在构造的新对象，也就是我们常说的实例化出来的对象。 
+     */
+    function Person(name) {
+        this.name = name;
+    }
+
+    var p = new Person('陈剑伟');
+    console.log(p.name);
+</script>
+
+</html>

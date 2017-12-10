@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.ele {
+				/*firfox*/
+				width: -moz-calc(expression);
+				/*chrom safari*/
+				width: -webkit-calc(expression);
+				/*standard*/
+				width: calc()
+			}
+		</style>
+	</head>
+	<body>
+		<p>calc()能让你给元素的做计算，你可以给一个div元素，使用百分比、em、px和rem单位值计算出其宽度或者高度，比如说“width:calc(50% + 2em)”，这样一来你就不用考虑元素DIV的宽度值到底是多少，而把这个烦人的任务交由浏览器去计算。著作权归作者所有。
+	<ul>
+		<li>使用“+”、“-”、“*” 和 “/”四则运算；</li>
+		<li>可以使用百分比、px、em、rem等单位；</li>
+		<li>可以混合使用各种单位进行计算；</li>
+		<li>表达式中有“+”和“-”时，其前后必须要有空格，如"widht: calc(12%+5em)"这种没有空格的写法是错误的；
+		<li>表达式中有“*”和“/”时，其前后可以没有空格，但建议留有空格。著作权归作者所有。
+	</ul>
+	<h2>在IE9+、FF4.0+、Chrome19+、Safari6+</h2>
+	
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.sss {
+				background: darkblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<span class="ss">...爱你</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		if ($('.ss').text() == '...爱你') {
+			$('.content').prepend('<span style="color:red">骗你的</span>')
+		}
+	</script>
+</html>

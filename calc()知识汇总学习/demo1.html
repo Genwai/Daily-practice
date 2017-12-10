@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.demo{
+				width: 300px;
+				background: blue;
+				/*300x80*/
+				padding: 3px 0;
+				/*父容器有个border 立马显示出，父容器不能包裹子容器了，子容器宽度比较宽*/
+			}
+			.box {
+				width: 100%;
+				background: red;
+				height: 50px;
+				padding: 10px;
+				border: 5px solid yellowgreen;
+				/*330x80*/
+				/*width: 90%;/*写给不支持calc()浏览器*/*/
+				width: -moz-calc(100% - (5px + 10px) * 2);
+				width: -webkit-calc(100% - (5px + 10px) * 2);
+				width: calc(100% - (5px + 10px) * 2);
+				
+			}
+		</style>
+	</head>
+	<body>
+	<div class="demo">
+		<div class="box">
+			
+		</div>
+	</div>
+	</body>
+</html>
