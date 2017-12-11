@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .content {
+            text-align: center;
+        }
+        
+        .content a {
+            /* transition:只是支持谷歌浏览器 */
+            width: 60px;
+            height: 60px;
+            background-color: saddlebrown;
+            display: inline-block;
+            vertical-align: middle;
+            color: white;
+            -webkit-transition: all 2s ease-in-out;
+            -moz-transition: all 2s ease-in-out;
+            transition: all 2s ease-in-out;
+        }
+        
+        .content a:hover {
+            margin-top: 50px;
+            transform: scale(2, 2) rotate(720deg);
+            -webkit-transfrom: scale(2, 2) rotate(720deg);
+            -moz-transform: scale(2, 2) rotate(720deg);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="content">
+        <a href="/">touch me</a>
+    </div>
+</body>
+
+</html>

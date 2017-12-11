@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 80px;
+            height: 60px;
+        }
+        
+        .img1 {
+            -webkit-transition: height 10s ease 6s;
+            -moz-transition: height 10s ease 6s;
+            transition: height 10s ease 6s;
+        }
+        
+        .img2:hover {
+            -moz-transform: rotate(10deg);
+            -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+            box-shadow: 2px 2px 3px rgba(135, 139, 144, 0.4);
+            -webkit-box-shadow: 2px 2px 3px rgba(135, 139, 144, 0.4);
+            -moz-box-shadow: 2px 2px 3px rgba(135, 139, 144, 0.4);
+            -webkit-transition: all .5s ease-in;
+            -moz-transition: all .5s ease-in;
+            transition: all .5s ease-in;
+        }
+        
+        .trans {
+            display: inline-block;
+            padding: 1px 8px;
+            -webkit-transition: all 0.5s ease-in;
+            -moz-transition: all 0.5s ease-in;
+            transition: all 0.5s ease-in;
+            /* transition-property: background;
+            transition-timing-function: ease-in;
+            transition-duration: 0.5s; */
+        }
+        
+        .trans:hover {
+            background: yellow;
+            color: #913535;
+        }
+        /* transBox */
+        
+        .transBox .trans_list {
+            width: 50px;
+            height: 64px;
+            margin: 10px 0;
+            color: #ffffff;
+            background-color: #448866;
+            text-align: center;
+        }
+        
+        .easy {
+            -webkit-transition: all 4s ease;
+            -moz-transition: all 4s ease;
+            transition: all 4s ease;
+        }
+        
+        .easy_in {
+            -webkit-transition: all 4s ease-in;
+            -moz-transition: all 4s ease-in;
+            transition: all 4s ease-in;
+        }
+        
+        .easy_out {
+            -webkit-transition: all 4s ease-out;
+            -moz-transition: all 4s ease-out;
+            transition: all 4s ease-out;
+        }
+        
+        .easy_in_out {
+            -webkit-transition: all 4s ease-in-out;
+            -moz-transition: all 4s ease-in-out;
+            transition: all 4s ease-in-out;
+        }
+        
+        .easy_linear {
+            -webkit-transition: all 4s linear;
+            -moz-transition: all 4s linear;
+            transition: all 4s linear;
+        }
+        
+        .trans_box:hover {
+            margin-left: 87%;
+            color: white;
+            border-radius: 25px;
+            background: salmon;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <p>transition的属性： 1、transition-property:指定要过渡的CSS属性 2、transition-during:指定完成过渡要花费的时间 3、transition-timing-function:指定过渡函数 4、transition-delay:指定过渡开始出现的延迟时间
+    </p>
+
+    <i>属性可以分开写，也可以放在一起写</i>
+    <img class="img1" src="img/1.jpg" alt="img">
+    <img src="img/2.jpg" class="img2" alt="">
+    <a href="str" class="a">多张图片悬停旋转动画demo</a>
+
+    <h1>demo2</h1>
+    <a href="#" class="trans">...经过我</a>
+
+    <h1>demo3</h1>
+    <div id="transBox" class="trans_box">
+        <div class="trans_list ease">ease</div>
+        <div class="trans_list ease_in">ease-in</div>
+        <div class="trans_list ease_out">ease-out</div>
+        <div class="trans_list ease_in_out">ease-in-out</div>
+        <div class="trans_list linear">linear</div>
+    </div>
+</body>
+
+
+</html>

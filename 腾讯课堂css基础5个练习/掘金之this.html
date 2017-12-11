@@ -116,6 +116,10 @@
 
     var p = new Person('陈剑伟');
     console.log(p.name);
+    // 几个陷阱
+    function Person(name) {
+        this.name =name;
+    }
 </script>
 
 </html>
