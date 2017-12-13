@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>转义符
+        <ul>
+            <li>1、转义符：\ 遇到 \ * + ? | { [ ( ) } } ^ $ . # 和空白</li>
+            <li>元字符要与限定符相符合</li>
+        </ul>
+    </p>
+    <label>电话: </label><input class="phone" type="textbox" name="" placeholder="请输入正确的密码">
+</body>
+<script>
+    var phone = document.querySelector('.phone');
+    phone.onblur = function() {
+        var reg = /(\+86)?1\d{10}/g;
+        var p_value = phone.value;
+        console.log(p_value);
+        if (reg.test(p_value)) {
+            alert('验证通过');
+        } else {
+            alert('验证失败')
+        }
+    }
+</script>
+
+</html>
