@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 150px;
+        }
+        
+        .trans_fade_image {
+            position: absolute;
+            /* 由于设置了absolute 导致觉得定位，变成两张图片重叠 */
+            -webkit-transition: all 1s ease-in;
+            -moz-transition: all 1s ease-in;
+            transition: all 1s ease-in;
+            /* transition:意思是说什么 CSS的什么属性进行 那四种方法 */
+        }
+        
+        .trans_fade_image:hover {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        
+        .trans_fade_image_click {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <img class="trans_fade_image " src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+    </div>
+
+</body>
+<script>
+    var imgs = document.getElementsByClassName('content')[0].getElementsByTagName('img');
+    imgs[0].onclick = function() {
+        if (this.className == 'trans_fade_image') {
+            this.className = 'trans_fade_image trans_fade_image_click';
+        } else {
+            this.className = 'trans_fade_image'
+        }
+    }
+</script>
+
+</html>

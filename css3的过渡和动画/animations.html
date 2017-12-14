@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .anim_box {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+        }
+        
+        @keyframes resize {
+            0% {
+                padding: 0;
+            }
+            50% {
+                padding: 0 20px;
+                background-color: rgba(190, 206, 235, 0.2);
+            }
+            100% {
+                padding: 0 100px;
+                background-color: rgba(190, 206, 235, 0.9)
+            }
+        }
+        
+        .anim_box:hover {
+            animation-name: resize;
+            animation-duration: 1.5s;
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>animation:动画【纯css】</h1>
+    <div class="anim_box resize">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 150px;
+            display: inline-block;
+        }
+        
+        .content1 {
+            width: 1100px;
+            margin: 0 auto;
+            background: khaki;
+        }
+        
+        @keyframes ani_fade {
+            0% {
+                opacity: 1;
+                filter: alpha(opacity=1);
+            }
+            25% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            75% {
+                opacity: 1;
+            }
+        }
+        
+        .ani_fade_img {
+            position: absolute;
+            animation-name: ani_fade;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-duration: 12s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>其实是：第一张图片进来，第二张图片不动。ease-in-out 导致第二张图片有渐进的感觉，通过transform ,线条控制循环的次数</p>
+    <i>anmimation:是要自己设置自己的轨迹</i>
+    <div class="content1">
+        <img class="ani_fade_img" src="img/3.jpg" alt="">
+        <img src="img/1.jpg" alt="">
+        <!-- <img src="img/2.jpg" alt=""> -->
+    </div>
+</body>
+
+</html>

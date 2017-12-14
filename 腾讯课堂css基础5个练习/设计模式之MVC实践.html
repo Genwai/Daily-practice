@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-		
-	</body>
-	<script type="text/javascript">
-		//model 模型---其实主要是存放数据，并且对数据进行处理
-		function Model () {
-			var val =0;
-			//增加数据
-			this.add =function  (v) {
-				if (val <100) {
-					val +=v;
-				}
-			};
-			//减少数据
-			this.sub = function  (v) {
-				if(val >0){
-					val -= v;
-				}
-			};
-			//获取数据
-			this.getVal =function  () {
-				return val;
-			}
-		}
-	}
-		
-	//View 视图 
-	function View (control) {
-		
 
-	</script>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+    //model 模型---其实主要是存放数据，并且对数据进行处理
+    function Model() {
+        var val = 0;
+        //增加数据
+        this.add = function(v) {
+            if (val < 100) {
+                val += v;
+            }
+        };
+        //减少数据
+        this.sub = function(v) {
+            if (val > 0) {
+                val -= v;
+            }
+        };
+        //获取数据
+        this.getVal = function() {
+            return val;
+        }
+    }
+
+
+
+    //View 视图 
+    function View(control) {
+
+    }
+</script>
+
 </html>

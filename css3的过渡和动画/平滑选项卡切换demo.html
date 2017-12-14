@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+            height: 300px;
+        }
+        
+        .trans_box {
+            width: 400px;
+            height: 400px;
+            margin: 20px;
+            overflow: hidden;
+        }
+        
+        .trans_image_box {
+            width: 2000px;
+            /* height: 300px; */
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        
+        .trans_image {
+            float: left;
+        }
+        
+        .trans_image_trigger {
+            padding-top: 10px;
+            text-align: center;
+        }
+        
+        .trans_image_trigger a {
+            color: saddlebrown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="trans_box">
+        <div id="transImageBox" class="trans_image_box">
+            <img class="trans_image" src="img/1.jpg" alt="">
+            <img class="trans_image" src="img/2.jpg" alt="">
+            <img class="trans_image" src="img/3.jpg" alt="">
+            <img class="trans_image" src="img/4.jpg" alt="">
+            <img class="trans_image" rc="img/5.jpg" alt="">
+        </div>
+        <div id="transImageTrigger" class="trans_image_trigger">
+            <a href="#1">图片1</a>
+            <a href="#2">图片2</a>
+            <a href="#3">图片3</a>
+            <a href="#4">图片4</a>
+            <a href="#5">图片5</a>
+        </div>
+    </div>
+</body>
+<script>
+    (function() {
+        var $ = function(id) {
+            return document.getElementById('id');
+        };
+        var obox = $('transImageBox');
+        var oTrigger = $('transImageTrigger').getElementsByTagName("a");
+        var lTrigger = oTrigger.length;
+
+        if (oBox && lTrigger) {
+            for (let i = 0; i < lTrigger; i++) {
+                oTrigger[i].onclick = function() {
+                    var index = Number(this.href.replace(/.*#/g, "")) || 1;
+                    // 正则： /.*#/g:把开头到#之间的内容替换成后面，并转换成数字 1 2 3 4 5
+                    oBox.style.marginLeft = (1 - idnex) * 400 + "px";
+                    return false;
+                };
+
+            }
+        }
+
+    });
+</script>
+
+</html>

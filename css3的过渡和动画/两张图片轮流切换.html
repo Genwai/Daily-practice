@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 250px;
+            height: 200px;
+        }
+        
+        .anim_image {
+            cursor: point;
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        
+        .anim_image_top {
+            position: absolute;
+            transform: scale(0, 0);
+            opacity: 0;
+            filter: alpha(opacity=0);
+            /* transform-origin: top right; */
+        }
+        
+        .content1:hover .anim_image_top {
+            opacity: 1;
+            filter: alpha(opacity=1);
+            transform: scale(1, 1);
+            transform-origin: top right;
+        }
+        
+        .content1:hover .anim_image_bottom {
+            transform: scale(0, 0) rotate(360deg);
+            /* transform:scale(1,0) :高度变为0，就是看不见了 */
+            transform-origin: bottom left;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="contain" class="content1">
+        <img class="anim_image  anim_image_top" src="img/3.jpg" alt="">
+        <img class="anim_image anim_image_bottom" src="img/1.jpg" alt="">
+
+    </div>
+</body>
+
+</html>
