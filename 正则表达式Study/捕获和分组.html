@@ -12,11 +12,42 @@
 
 </body>
 <script>
-    var color = "#808080";
-    var output = color.replace(/#(\d+)/, '$1' + 'genwai');
-    console.log('$1');
-    console.log(RegExp.$1);
-    console.log(output)
+    // var color = "#808080";
+    // var output = color.replace(/#(\d+)/, '$1' + 'genwai');
+    // console.log('$1');
+    // console.log(RegExp.$1);
+    // console.log(output);
+    // var url ="www.google.google.com";
+    // var re =/()/;
+    //答案是 因为这个方法最终是被 (obj.c[0]  它是一个对象)调用 所以this指向这个对象 长度是3
+    function fun() {
+        console.log(this.a);
+    }
+    var obj = {
+        'a': 1,
+        'b': 2,
+        'c': [{
+            'a': 4,
+            'b': 4,
+            'c': fun
+        }]
+    }
+    var a = 5;
+    obj.c[0].c();
+    console.log(obj.c[0]); //数组中，每个数组是一个对象
+
+    console.log(obj.c[0].a);
+</script>
+<script>
+    function func(m, n, o, p, q, r) {
+        alert(this.length);
+    }
+
+    function f(a, b) {
+        arguments[0](9, 10, 11, 12, 13);
+        console.log(arguments[0](9, 10, 11, 12, 13));
+    }
+    f(func, 5, 6, 7);
 </script>
 
 </html>
