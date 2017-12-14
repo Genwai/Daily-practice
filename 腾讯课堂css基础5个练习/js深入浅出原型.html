@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>javascript:原型
+        1、  在javascript中，每定义一个函数对象，对象中都会包含  一些预定义属性（意思说这个函数一旦被定义】
+        久必然会有这些属性）
+        2、其中函数对象的一个属性就是原型对象prottype：这个属性会指向函数的原型对象
+        3、默认情况下：每个原型对象都会获取一个constructor属性，这个属性包含一个指向prototype属性所在函数指针
+    普通对象没有prototype,但有_proto_属性s  
+
+    </p>
+    <p>圆形脸，老司机，深入一点
+        1、JS在创建对象（不论是普通对象还是函数对象，有会有一个__proto__内置属性，用它只指向
+        创建他的函数对象prtotype）
+
+    </p>
+</body>
+<script>
+    function Dogs() {
+        
+    }
+    Dogs.prototype.name ="genwai";
+    Dogs.prototype.age =3;
+    Dogs.prototype.DogName =function () {
+        // console.log(this.name);//zai  prototype中this是指向构造函数
+     return this.name;
+    }
+    // Dogs();//必须实例话，不然不可以
+    var DogsA= new  Dogs();
+    console.log(DogsA.DogName());
+/* 
+     总结：创建一个Dogs函数时候，此时它会拥有一个prototype对象，但是这个属性是指向
+     Dogs Prototype 原型对象，而这个原型对象拥有一个对象constructor(构造函数)，其指针
+     指向Dogs，就是，而且当你实例化一个对象dog ，该对象就会拥有一个prototype属性，这个prototype会指向
+     原型对象
+ */
+</script>
+</html>
