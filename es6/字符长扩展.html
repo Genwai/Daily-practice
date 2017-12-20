@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    字符串扩展（上）（下）
+
+</body>
+<script>
+    {
+        console.log('a', `\u0061`);
+        console.log('s', `\u20BB7`, 0xFFFF); //被当成两个字符，必须用两个
+
+        console.log('s', `\u{20BB7}`, 0xFFFF); //被当成两个字符，必须用两个
+
+        let s = '𠮷';
+    }
+
+    {
+        let s = '𠮷';
+        let s1 = 'a';
+        console.log('length', s.length, s1.length); //2=4个字节
+
+        // 去编码
+        console.log('0', s.charAt(0));
+        console.log('1', s.charAt(1));
+        console.log('at0', s.charCodeAt(0));
+        console.log('at1', s.charCodeAt(1));
+
+        let s2 = '𠮷a';
+        console.log('length', s2.length);
+        console.log('code0', s2.codePointAt(0).toString(16));
+        console.log('code1', s2.codePointAt(0));
+    }
+
+    {
+        let str = 'string';
+        console.log('includes', str.includes("r")); //string中是否包含r字符
+        console.log('includes', str.includes("c")); //string中是否包含r字符
+
+        /* 使用高：为首，结尾，包含 */
+        console.log('includes', str.includes("c")); //string中是否包含r字符
+        console.log('start', str.startsWith('str')); //字符为首
+        console.log('start', str.endsWith('ng')); //字符为首
+    }
+    /* 字符串的赋值 */
+    {
+        let str = "abc";
+        console.log(str.repeat(2));
+    }
+
+    /* 模板字符串 */
+    {
+        let name = "list";
+        let info = "hello world";
+        let m = `i am ${name} ${info}`;
+        console.log(m);
+    }
+
+    /*  */
+    {
+        console.log('1'.padStart(2, '0')); //向前补白
+        console.log('1'.padEnd(2, '0'));
+    }
+
+    /* 标签模板 */
+    {
+        let user = {
+            name: 'list',
+            info: 'hello world'
+        };
+        console.log(abc `i am $(user.name),$(user.info)`);
+        // 以前必须用+
+
+        function abc(s, v1, v2) {
+            console.log(s, v1, v2);
+            return s + v1 + v2;
+        }
+    }
+
+    {
+        console.log(String.raw `Hi\n${1+2}`);
+        console.log(`HI\n${1+2}`);
+    }
+    /* 数组的对象扩展问题 */
+    {
+        let arr1 = ['www', 'genwai', '.com'];
+        let arr2 = [...arr1];
+        console.log(arr2);
+        arr2.push('new');
+        console.log(arr1);
+    }
+    /* reset运算符 */
+    {
+        function genwai(first, ...arg) {
+            console.log(arg.length);
+            for (var val of arg) {
+                console.log(val)
+            }
+        }
+        genwai(1, 2, 3, 4, 5, 6, 7);
+
+    }
+</script>
+
+</html>

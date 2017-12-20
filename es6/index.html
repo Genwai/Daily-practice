@@ -17,42 +17,170 @@
 
 </script>
 <script type="text/javascript">
-    var a = [];
-    for (var i = 0; i < 10; i++) {
-        a[i] = function() {
+    {
+        var a = [];
+        for (var i = 0; i < 10; i++) {
+            a[i] = function() {
+                console.log(i);
+            };
+
+        }
+        a[6]();
+        for (let i = 0; i < 3; i++) {
+            let i = 'abc';
             console.log(i);
-        };
 
+        }
+        // 输出3次，输出3次‘abc’，
+        // 输出undefined是表示变量已经有了，但是确定的值没有赋值给他
+        // ReferenceError ：表示这个变量是不存在的}\
     }
-    a[6]();
-    for (let i = 0; i < 3; i++) {
-        let i = 'abc';
-        console.log(i);
-
-    }
-    // 输出3次，输出3次‘abc’，
-    // 输出undefined是表示变量已经有了，但是确定的值没有赋值给他
-    // ReferenceError ：表示这个变量是不存在的
 </script>
 <script>
-    // const
-    const foo = {};
-    foo.prop = 123;
-    console.log(foo.prop);
+    {
+        // const
+        const foo = {};
+        foo.prop = 123;
+        console.log(foo.prop);
 
-    // foo = {} //指向新的对象，报错了，但是可以在对象中添加新的属性，因为指针指向的方向得失对象；
+        // foo = {} //指向新的对象，报错了，但是可以在对象中添加新的属性，因为指针指向的方向得失对象；
 
-    // 另一个栗子
-    const b = [];
-    b.push('hello');
-    b.length = 0; //长度被归零了
-    console.log(b);
-    // b = ['genwai'];//给数组赋值一个新的数组是不行，因为，不能改变指针指向的对象
+        // 另一个栗子
+        const b = [];
+        b.push('hello');
+        b.length = 0; //长度被归零了
+        console.log(b);
+        // b = ['genwai'];//给数组赋值一个新的数组是不行，因为，不能改变指针指向的对象
 
-    // 如果想设置不能给对象赋值属性；可以吧对象进行冻结
-    const genwai = Object.freeze({});
-    genwai.prop = 456;
-    // 顶层对象属性
+        // 如果想设置不能给对象赋值属性；可以吧对象进行冻结
+        const genwai = Object.freeze({});
+        genwai.prop = 456;
+        // 顶层对象属性
+    }
+</script>
+<script>
+    {
+        // 学习jspang的数组
+        let json = {
+                '0': 'genwai',
+                '1': '建伟',
+                '2': 'jianwei',
+                length: 3
+            }
+            // 把json格式转化为数组
+        let arr = Array.from(json);
+        console.log(arr);
+    }
+    /* Array.of():负责把一堆文本或者变量换成数组 */
+    {
+        let arr1 = Array.of(1, 5, 10, 52);
+        console.log(arr1);
+        let arr2 = Array.of('genwai', 'chenjianwei', '建伟');
+        console.log(arr2);
+    }
+    /* find()实例方法 */
+    {
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 324, 21];
+        let s = arr.find(function(value, index, arr) {
+            return value > 5;
+        })
+        console.log(s);
+    }
+    /* fill()实例方法 */
+    {
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 324, 21];
+        let s = arr.fill('genwai', 2, 3);
+        console.log(s);
+    }
+
+    /* for of 循环 */
+    {
+        let arr = ['chenjianwei', '技术胖', 'dapang'];
+        for (let [index, val] of arr.entries()) {
+            console.log(index + ' ' + val);
+        }
+    }
+
+    /* JSON对象函数的解构 */
+    {
+        let json = {
+            a: 'genwai',
+            b: 'chenjianwei'
+        };
+
+        function fun({
+            a,
+            b = 'jsgenwai'
+        }) {
+            console.log(a, b);
+        }
+
+        fun(json); //genwai chenjianwei
+    }
+
+    /* 数组的函数解构 */
+    {
+        let arr = ['jspang', '技术胖', '免费教程'];
+
+        function func(a, b, c) {
+            console.log(a, b, c);
+        }
+        func(...arr)
+    }
+    /* in的用法 */
+    {
+        let obj = {
+            a: 'genwai',
+            b: '师傅'
+        }
+        console.log('a' in obj); //true
+    }
+    /* 数组的判断 */
+    {
+        let arr = [, , , , , , ];
+        console.log(0 in arr);
+
+        let arr1 = ['jspang', '技术胖'];
+        console.log(2 in arr1); //false 2 代表数组下的三个是否有值
+    }
+
+    // 数组的遍历方法
+    /* forEach 遍历 */
+    {
+        // 1、forEach 会自动为我们省略去空的数组
+        let arr = ['jspang', , '技术胖', '免费教程'];
+        // console.log(...arr); // 这只是输出而已
+        arr.forEach((vale, index) => console.log('forEach', index, vale)); //*查看控制台
+
+    }
+    /* filter */
+    {
+        let arr = ['jspang', , '技术胖', '免费教程'];
+        arr.filter(x => console.log('filter', x))
+    }
+    /* some */
+    {
+        let arr = ['jspang', , '技术胖', '免费教程'];
+        arr.some(x => console.log('some', x))
+    }
+    /* map */
+    {
+        let arr = ['jspang', , '技术胖', '免费教程'];
+        console.log(arr.map(x => 'map'));
+    }
+
+    // 数组转换成字符
+    /* join() 方法 */
+    {
+        let arr = ['jspang', , '技术胖', '免费教程'];
+
+        console.log('join()', arr.join('|'));
+    }
+    /* toString()方法 */
+    {
+        let arr = ['jspang', , '技术胖', '免费教程'];
+        console.log('toString()', arr.toString());
+    }
 </script>
 
 </html>
