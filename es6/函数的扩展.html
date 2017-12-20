@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    函数的扩展
+</body>
+<script>
+    {
+        function log(x, y = 'world') {
+            console.log(x, y)
+        }
+        log('hellw');
+        log('hellw', '');
+        log('hello', 'china')
+    }
+
+    /* 相对简洁 */
+    {
+        function point(x = 0, y = 0) {
+            this.x = x;
+            this.y = y;
+        }
+        const p = new point();
+        console.log(p.x, p.y, p)
+    }
+
+    {
+        let x = 99;
+
+        function foo(p = x + 1) {
+            console.log(p);
+        }
+        foo();
+        foo();
+        x = 100;
+        foo();
+
+    }
+
+    /* 与解构赋值默认值结合使用 */
+    {
+        function foo({
+            x,
+            y = 5
+        }) {
+            console.log(x, y);
+        }
+        foo({
+            x: 1
+        });
+
+    }
+
+    /* 参数的默认值是一个函数，该函数的作用域也遵守这个规则：作用域 */
+    {
+        var x = 1;
+
+        function f(x, y = x) {
+            console.log(x);
+        }
+        f(2); //2
+    }
+
+    {
+        let x = 1;
+
+        function f(y = x) {
+            let x = 2;
+            console.log(y);
+        }
+        f(2); //1 此时是全局变量
+
+    }
+
+    {
+        /* 函数foo的参数形成一个单独的作用域。先声明了变量x，再声明变量y，y是一个默认的
+        的匿名函数，这个匿名函数内部的变量x指向同一个作用域的第一个参数的x。函数foo内部又声明了一个、
+        内部变量x。该变量与第一个参数x不是同一个变量，因此执行完y，内部变量x 和外部变量x的值都是没有变的
+        
+        */
+        var x = 1;
+
+        function foo(x, y = function() {
+            x = 2;
+        }) {
+            var x = 3;
+            y();
+            console.log(x);
+        }
+        foo();
+        console.log(x);
+    }
+    /* rest 参数 */
+    {
+
+        function add(...values) {
+            let sum = 0;
+            for (var val of values) {
+                sum = sum + val;
+
+            }
+            return sum;
+        }
+        console.log('add', add(1, 2, 3, 10));
+    }
+
+    {
+        // push:可向数组末尾添加一个或者多个元素，并返回新的长度
+        function push(array, ...items) {
+            items.forEach(function(item) {
+                array.push(item);
+                console.log(item);
+            })
+        }
+        var a = [120, 12];
+        push(a, 10, 100, 20)
+        console.log(a);
+    }
+
+    /* 5、箭头函数 */
+    {
+        var f = v => v;
+        // 等同于如下:
+        var f = function(v) {
+            return v;
+        }
+
+        let sum = (sum1, sum2) => sum1 + sum2;
+        let sum2 = (num1, num2) => {
+            num1 + num2
+        };
+        let sum3 = id => ({
+            id: id,
+            name: name
+        })
+    }
+    /* 箭头函数与变量解构结合使用 */
+    // 没有函数名是匿名函数
+    // {
+    //     const a = ({
+    //         first,
+    //         last
+    //     }) => first + ' ' + last;
+    //     // 等价于
+    //     function a(person) {
+    //         return person.first + ' ' + person.last;
+    //     }
+
+    //     [1, 2, 3].map(function(x) {
+    //         return x * x;
+    //     })[1, 2, 3].map(x => x * x)
+
+    //     var redult = values.sort((a, b) => a - b);
+
+    // }
+
+    {
+        function foos() {
+            setTimeout(() => {
+                console.log('id:', this.id)
+            }, 100);
+        }
+        var id = 12;
+        foos.call({
+            id: 42
+        })
+    }
+
+    {
+        function Timer() {
+            this.s1 = 0;
+            this.s2 = 0;
+            // 箭头函数
+            setInterval(() => {
+                this.s1++;
+            }, 1000);
+            setInterval(function() {
+                this.s2++;
+            }, 1000)
+        }
+        var timer = new Timer();
+        setTimeout(() => {
+            console.log('s1:', timer.s1)
+        }, 3100);
+        setTimeout(() => {
+            console.log('s2:', timer.s2);
+        }, 3100);
+    }
+    /* 双冒号运算符 
+    :: 左边是对象，右边是是一个函数
+        该运算符会自动将左边的对象，作为上下文环境   ：即this对象，绑定到右边的函数上
+        
+    */
+    {
+
+    }
+</script>
+
+</html>

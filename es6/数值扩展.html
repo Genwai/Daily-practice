@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    数组扩展
+    <ul>
+        <li>NaN:于处理计算中出现的错误情况，比如 0.0 除以 0.0 或者求负数的平方根。还指一个预定义的常量，表示“不明确的数值结果”</li>
+        <li>整数和浮点数是同样的储存方法，所以 3 和 3.0 被视为同一个值。</li>
+    </ul>
+</body>
+<script>
+    {
+
+        console.log('b', 0b111110111); //二进制
+        console.log('B', 0B111110111); //二进制
+        console.log(0o111110111); //八进制.
+
+    }
+    /* Number.isFinite,Number.isNaN */
+    {
+        let s = Number.isFinite(15);
+        let s2 = Number.isFinite(0.8);
+
+        let s3 = Number.isNaN(NaN);
+        let s4 = Number.isNaN('foo');
+        let s5 = Number.isFinite(true);
+        console.log(s, s2, s3, s4, s5);
+    }
+    // parseInt parseFloat: 就是把字符转化成数字
+    {
+        let s1 = Number.parseInt('12.6');
+        let s2 = Number.parseFloat('15.36#');
+        console.log(s1, s2);
+    }
+    /* Number.isInteger() */
+    {
+        let s = Number.isInteger(12.65);
+        console.log(s);
+    }
+
+    /* Math */
+    {
+        let s
+    }
+</script>
+
+</html>

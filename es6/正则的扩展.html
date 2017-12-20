@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    正则的扩展
+</body>
+<script>
+    {
+        let regex = new RegExp('xyz', 'i');
+        let regex2 = new RegExp(/xyz/i);
+
+        console.log(regex.test('xyz123'), regex2.test('xyz123'));
+
+        let regex3 = new RegExp(/xyz/ig, 'i');
+        console.log(regex3.flags);
+
+    }
+    // 修饰符
+    {
+        // 都是全局匹配，修饰符是从上一次匹配结束，再次匹配下个
+        // y
+        let s = 'bbb_bb_b';
+        let regexp1 = new RegExp(/b+/g);
+        let regexp2 = new RegExp(/b+/y);
+        console.log('one', regexp1.exec(s), regexp2.exec(s));
+        console.log('two', regexp1.exec(s), regexp2.exec(s));
+        console.log('third', regexp1.exec(s), regexp2.exec(s));
+        console.log('third', regexp1.exec(s), regexp2.exec(s));
+
+        console.log(regexp1.sticky, regexp2.sticky)
+
+    }
+    // unicode
+    // 字符串大于两个字符 需要添加u ，才能被识别
+    {
+
+        console.log('u-1', /^\uD830/.test('\uD830\uDC2A'));
+        console.log('u-1', /^\uD830/u.test('\uD830\uDC2A'));
+
+        console.log(/\u{61}/.test('a'));
+        console.log(/\u{61}/u.test('a'));
+
+        console.log(`\u{20BB7}`);
+
+        let s = '𠮷';
+
+        console.log('u', /^.$/.test(s));
+        console.log('u-2', /^.$/u.test(s));
+
+        console.log('test', /𠮷{2}/.test('𠮷𠮷'));
+        console.log('test', /𠮷{2}/u.test('𠮷𠮷'));
+        /* 
+        1、 字符中大于两个字符
+        */
+    }
+</script>
+
+</html>
