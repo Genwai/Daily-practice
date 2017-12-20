@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js"></script>
+
+<script>
+    // 解构
+    let [foo, [
+        [bar]
+    ], baz] = [1, [
+        [10]
+    ], 5];
+    console.log(foo);
+    // let {
+    //     second,
+    //     third
+    // } = {
+    //     second: 'chen',
+    //     third: 'jian'
+    // }
+    // console.log(second);
+    // 变量必须与属性同名 如下栗子：
+    let {
+        // name
+        // names
+    } = {
+        name: 'genwai',
+        age: '24'
+    }
+    // console.log(age); //referenceError :age is not defined
+    // console.log(names); //undefined
+
+    /* 如果变量名与属性名不一致，必须如下格式 */
+    let {
+        name1: name1,
+        age: age1
+    } = {
+        name1: 'genwai1',
+        age: 23,
+    }
+    console.log(age1);
+
+
+    // 数组也是一样嵌套结构对象
+    let obj2 = {
+        p: ['hello world', {
+            y: 'genwai'
+        }]
+    };
+    let {
+        p,
+        p: [x, {
+            y
+        }]
+    } = obj2;
+    console.log(p)
+    console.log(p[0])
+    console.log(p[1].y)
+    console.log(x)
+    console.log(y)
+</script>
+
+<script>
+    // 永远是数组
+    let arr = [1, 2, 3];
+    let {
+        0: name3,
+        [arr.length - 1]: second
+    } = arr;
+    console.log(name3, second)
+</script>
+
+</html>

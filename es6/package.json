@@ -1,0 +1,16 @@
+{
+    "name": "Program",
+    "version": "1.0.0",
+    "description": "这是一个es6学习代码",
+    "main": "index.js",
+    "scripts": {
+        "build": "babel src/js/index.js -o dist/index.js "
+    },
+    "keywords": [],
+    "author": "Genwai",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-latest": "^6.24.1"
+    }
+}

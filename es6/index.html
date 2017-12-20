@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js"></script>
+<script type="text/babel">
+    // Your ES6 code
+
+</script>
+<script type="text/javascript">
+    var a = [];
+    for (var i = 0; i < 10; i++) {
+        a[i] = function() {
+            console.log(i);
+        };
+
+    }
+    a[6]();
+    for (let i = 0; i < 3; i++) {
+        let i = 'abc';
+        console.log(i);
+
+    }
+    // 输出3次，输出3次‘abc’，
+    // 输出undefined是表示变量已经有了，但是确定的值没有赋值给他
+    // ReferenceError ：表示这个变量是不存在的
+</script>
+<script>
+    // const
+    const foo = {};
+    foo.prop = 123;
+    console.log(foo.prop);
+
+    // foo = {} //指向新的对象，报错了，但是可以在对象中添加新的属性，因为指针指向的方向得失对象；
+
+    // 另一个栗子
+    const b = [];
+    b.push('hello');
+    b.length = 0; //长度被归零了
+    console.log(b);
+    // b = ['genwai'];//给数组赋值一个新的数组是不行，因为，不能改变指针指向的对象
+
+    // 如果想设置不能给对象赋值属性；可以吧对象进行冻结
+    const genwai = Object.freeze({});
+    genwai.prop = 456;
+    // 顶层对象属性
+</script>
+
+</html>

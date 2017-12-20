@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a :nth-child() {
+            color: rgba(red, green, blue, alpha)
+        }
+    </style>
+</head>
+
+<body>
+    <p>了解闭包： 1、闭包是：指可以访问另一个函数作用域变量的函数，一般是定义在外层函数中的内层函数 为什么需要闭包： 1、局部变量是无法共享和长久保存，而全局变量可能造成变量污染，所以我们希望 有一种机制既可以长久的保存变量又不会造成全局污染 特点： 1、占用更多内存 2、不容易被释放 何时使用 即想反复使用，又想避免全局污染 如何使用 1、定义外层函数，封装被保护的局部变量。 2、定义内层函数，执行对外部函数变量的操作 3、外层函数返回内层函数的对象，
+    </p>
+    <ul>
+        <li>闭包外层是一个函数</li>
+        <li>闭包内部是一个函数</li>
+        <li>闭包会return内部的函数</li>
+        <li>闭包返回的函数中不能含有return ,因为这样就真的结束了</li>
+        <li>执行闭包后，闭包内部变量会存在，而闭包函数内部变量不会存在</li>
+    </ul>
+</body>
+<script>
+    var getNum;
+
+    function getCounter() {
+        var n = 1;
+        var inner = function() {
+            return n++;
+        };
+        return inner;
+    }
+
+    getNum = getCounter();
+    console.log(getNum);
+    console.log(getNum());
+    console.log(getNum());
+</script>
+
+</html>

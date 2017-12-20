@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul li,
+        span {
+            width: 150px;
+            height: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 通过设置width 百分比，可以进行伸缩、比较 -->
+    <p>简单理解就是我要把文本限制在一行（white-space: nowrap;），肯定这一行是有限制的(width)，并且你的溢出的部分要隐藏起来（overflow: hidden；），然后出现省略号（ text-overflow: ellipsis）。</p>
+    <ul>
+        <li>动换行我们使用html nobr标签强制内容不换行，</li>
+        <li>动换行我们使用html nobr标签强制内容不换行，</li>
+        <li>动换行我们使用html nobr标签强制内容不换行，</li>
+    </ul>
+    <span>动换行我们使用html nobr标签强制内容不换行，</span>
+</body>
+
+</html>
