@@ -10,3 +10,11 @@ var a = 'genwai';
     console.log(a);
 }
 console.log(a);
+
+{
+    let p = document.querySelector('p');
+    let pArray = Array.from(p);
+    pArray.forEach(function(item) {
+        console.log(item.textContent);
+    })
+}

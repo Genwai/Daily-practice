@@ -181,6 +181,245 @@
         let arr = ['jspang', , '技术胖', '免费教程'];
         console.log('toString()', arr.toString());
     }
+
+    //  ES6中的对象对象对于Javascript是非常重要的。在ES6中对象有了很多新特性，
+    {
+        // es6允许把声明的变量直接赋值给对象，给我看下面的例子。
+        let [name, skill] = ['genwai', 'js'];
+        var obj = {
+            name,
+            skill
+        }
+        console.log(obj);
+    }
+    /* 对象key的构建 */
+    // 有时候我们会在后台取出key，而不是我们前台定义好的，然后我们可以用[]的形式，进行对象构建
+    {
+        let key = 'skill';
+        var obj = {
+            [key]: 'javascript'
+        }
+        console.log(obj.skill);
+    }
+    /* 自定义对象方法 */
+    {
+        var obj = {
+            add: function(a, b) {
+                return a + b
+            }
+        }
+        console.log(obj.add(1, 2));
+    }
+    /* 与上面比较 Object.id()对象比较*/
+    {
+        var obj1 = {
+            name: 'jspang'
+        };
+        var obj2 = {
+            name: 'jspang'
+        };
+        console.log(obj1.name = obj2.name);
+
+        console.log(Object.is(obj1.name, obj2.name));
+
+        console.log(+0 === -0); //true
+        console.log(NaN === NaN); //false
+        console.log(Object.is(+0, -0)); //false
+        console.log(Object.is(NaN, NaN)); //true
+
+        /* 这太诡异了，我要怎么记忆，那技术胖在这里告诉你一个小妙招，===为同值相等，is()为严格相等。 */
+
+    }
+    /* 合并对象 object.assign*/
+    {
+        var a = {
+            a: 'jianwei'
+        };
+        var b = {
+            b: 'genwai'
+        };
+        var c = {
+            c: '建伟',
+        }
+        let dd = Object.assign(a, b, c);
+        console.log(dd);
+
+    }
+
+    /* symbol 在对象中的作用 */
+    {
+        var a = new String;
+        var b = new Number;
+        var c = new Boolean;
+        var d = new Array;
+        var e = new Object;
+        var f = Symbol();
+        console.log(a, b, c, d, e, f);
+    }
+
+    {
+        var g = Symbol('genwai');
+        console.log(g); //红色genwai
+        console.log(g.toString()); //黑色genwai
+    }
+    /* symbol 在对象中的应用 
+    symbol 构建对象的key,并调用和赋值
+    */
+    {
+        var genwai = Symbol();
+        var obj = {
+            [genwai]: '陈建伟',
+        }
+        console.log(obj[genwai]);
+        obj[genwai] = 'javascript';
+        console.log(obj[genwai]);
+
+    }
+    /* symbol 对象元素的保护作用 */
+    {
+        // 在对象中很多值，但是循环输出时，并不希望全部输出，那我们就可以使用symbol进行保护
+        // 1、无保护的写法
+        var obj = {
+            name: 'genwai',
+            skill: 'web'
+        }
+        for (let val in obj) {
+            console.log('symboltest', obj[val])
+        }
+
+
+    }
+    // 2、隐藏年龄 Symbol 在对象中的应用
+    {
+        let obj = {
+            name: 'genwai',
+            skill: 'js;'
+        }
+        var age = Symbol();
+        obj[age] = 99;
+        for (let key in obj) {
+            console.log('隐藏年龄', obj[key]);
+        }
+    }
+    // Set 和 WeakSet :数据结构
+    /* 1、set 声明
+    2、Set和Array 的区别是Set不允许内部有重复的值，如果有只显示一个，相当于去重。虽然Set很像数组，但是他不是数组。
+    */
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+
+        console.log('Set', setArr);
+
+        setArr.add('前端');
+        console.log('Set-add', setArr);
+
+        setArr.delete('web');
+        console.log('Set-delete', setArr);
+    }
+    /* has 进行查找：返回的是 */
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+        console.log(setArr.has('jspang'));
+    }
+    /* clear */
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+        setArr.clear();
+        console.log('clear', setArr);
+    }
+    // sieze 
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+        for (let val of setArr) {
+            console.log('val', val);
+        }
+        console.log('size', setArr.size);
+    }
+    // forEach
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+        setArr.forEach(value => {
+            console.log('forEach', value);
+        });
+    }
+
+    // WeakSet 声明
+    {
+        let weakObj = new WeakSet();
+        let obj = {
+            a: 'genwai',
+            b: 'web'
+        }
+        weakObj.add(obj);
+        console.log('weakobj', weakObj);
+    }
+
+    // map :数据结构
+    /* 一些构建工具非常喜欢使用map这种数据结构来进行配置，因为map比较灵活
+    适合简单一对一查询。我们知道的数据结构已经有了：json set
+    */
+    {
+        let json = {
+            name: 'genwai',
+            skill: 'web'
+        }
+        console.log(json.name);
+        /* 
+        1、主要原因这种反应度要低于数组和map结构。而且Map的灵活性要更好，你可以把它看成一种特殊的键值对，
+        但你的key可以设置成数组，值也可以设置成字符串，让它不规律对应起来。
+        */
+    }
+    /* map */
+    {
+        let json = {
+            name: 'genwai',
+            skill: 'web'
+        }
+        var map = new Map();
+        map.set(json, 'iam');
+        console.log('map', map);
+
+        console.log('map.get', map.get(json));
+    }
+
+    // 用Proxy 进行预处理
+    /* 
+    1、钩子函数：在运行函数前初始化一些数据，在改变对象后做一些善后处理。
+    这些都是钩子函数，proxy的存在就可以让我们给函数加上这样的钩子函数，
+    理解：在执行方法前预处理一些代码。
+    理解：为他是函数或者对象的生命周期
+    */
+
+    {
+        // 回顾定义对象的方法；
+        var obj = {
+            add: function(val) {
+                return val + 10;
+            },
+            name: 'i am web developer'
+        }
+        console.log('对象方法定义', obj.add(10), obj.name);
+    }
+    /* 对照 proxy
+    1、new Proxy({},{})
+
+    get:得到目标值
+    key:目标的key值
+
+
+    */
+    {
+        var pro = new Proxy({
+            add: a => a + 10,
+            name: 'genwai'
+        }, {
+            get: function(target, key, property) {
+                console.log('proxy-get', 'come in get');
+                return target[key];
+            }
+        });
+        console.log('proxy', pro.name);
+    }
 </script>
 
 </html>
