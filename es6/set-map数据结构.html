@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* 1、set 声明
+                                                                                                                                                        2、Set和Array 的区别是Set不允许内部有重复的值，如果有
+                                                                                                                                                        只显示一个，相当于去重。虽然Set很像数组，但是他不是数组。
+                                                                                                            */
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+
+        console.log('Set', setArr);
+
+        setArr.add('前端');
+        console.log('Set-add', setArr);
+
+        setArr.delete('web');
+        console.log('Set-delete', setArr);
+
+        // 求其中的长度
+        console.log(setArr.size);
+    }
+
+    /* has 进行查找：返回的是 */
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+        console.log(setArr.has('jspang'));
+    }
+    /* clear */
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+        setArr.clear();
+        console.log('clear', setArr);
+    }
+    // sieze 
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+        for (let val of setArr) {
+            console.log('val', val);
+        }
+        console.log('size', setArr.size);
+    }
+    // forEach
+    {
+        let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
+        setArr.forEach(value => {
+            console.log('forEach', value);
+        });
+        // 找key
+        for (let key of setArr.keys()) {
+            console.log('key', key);
+        }
+        for (let key of setArr) {
+            console.log('val', key);
+        }
+
+    }
+
+    // WeakSet 声明 :只能是对象
+    /* 2、没有一些API ，添加了一个对象，没有考过来，只是地址的一个引用,没有clear 没有遍历，几个方法一样，add delete has*/
+    {
+        let weakObj = new WeakSet();
+        let obj = {
+            a: 'genwai',
+            b: 'web'
+        }
+        weakObj.add(obj);
+        // weakObj.add(2)
+        console.log('weakobj', weakObj);
+    }
+
+    // map :数据结构
+    /* 一些构建工具非常喜欢使用map这种数据结构来进行配置，因为map比较灵活
+    适合简单一对一查询。我们知道的数据结构已经有了：json set
+    */
+    {
+        let json = {
+            name: 'genwai',
+            skill: 'web'
+        }
+        console.log(json.name);
+        /* 
+        1、主要原因这种反应度要低于数组和map结构。而且Map的灵活性要更好，你可以把它看成一种特殊的键值对，
+        但你的key可以设置成数组，值也可以设置成字符串，让它不规律对应起来。
+        */
+    }
+    /* map */
+    {
+        let json = {
+            name: 'genwai',
+            skill: 'web'
+        }
+        var map = new Map();
+        map.set(json, 'iam'); //set 的添加元素的方法
+        console.log('map', map);
+
+        console.log('map.get', map.get(json));
+    }
+    // 第一种定义方法
+    {
+        // map key可以是任何数据类型的
+        let map2 = new Map();
+        let arr = ['123'];
+
+        map2.set(arr, map2);
+        console.log(map2, map2.get(arr));
+    }
+    // 第二种第一方法
+    {
+
+    }
+</script>
+
+</html>

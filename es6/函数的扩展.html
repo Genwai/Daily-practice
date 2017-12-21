@@ -199,11 +199,16 @@
        
 
     */
+    /* 尾调用 */
     {
-        foo::bar;
-        bar.bind(foo);
+        function tail(x) {
+            console.log('tail', x);
+        }
 
-        foo::bar(...arguments);
+        function fx(x) {
+            return tail(x);
+        }
+        fx(13222); //提升性能
     }
 </script>
 

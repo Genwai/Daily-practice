@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    symbol
+</body>
+<script>
+    {
+        let a1 = Symbol();
+        let a2 = Symbol();
+        console.log(a1 === a2);
+
+        let a3 = Symbol.for('a3'); //key
+        let a4 = Symbol.for('a3');
+        console.log(a3 === a4);
+
+    }
+
+    {
+        let a1 = Symbol.for('abc');
+        let obj = {
+            [a1]: 123,
+            abc: 456,
+            c: 12,
+        }
+        console.log(obj);
+    }
+    // 2、隐藏年龄 Symbol 在对象中的应用
+    {
+        let obj = {
+            name: 'genwai',
+            skill: 'js;'
+        }
+        var age = Symbol();
+        obj[age] = 99;
+        for (let key in obj) {
+            console.log('隐藏年龄', obj[key]);
+        }
+
+        /* 因为返回值是一个数组 */
+        Object.getOwnPropertySymbols(obj).forEach(item => console.log('你妹：怎么就打印一个', obj[item]))
+            // 只是输出一个 被symbol设置
+
+        Reflect.ownKeys(obj).forEach(item => {
+            console.log('reflect:所有都打印出来', obj[item]);
+        });
+    }
+</script>
+
+</html>
