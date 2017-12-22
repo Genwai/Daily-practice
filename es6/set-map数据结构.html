@@ -13,9 +13,9 @@
 </body>
 <script>
     /* 1、set 声明
-                                                                                                                                                        2、Set和Array 的区别是Set不允许内部有重复的值，如果有
-                                                                                                                                                        只显示一个，相当于去重。虽然Set很像数组，但是他不是数组。
-                                                                                                            */
+                                                                                                                                                                        2、Set和Array 的区别是Set不允许内部有重复的值，如果有
+                                                                                                                                                                        只显示一个，相当于去重。虽然Set很像数组，但是他不是数组。
+                                                                                                                            */
     {
         let setArr = new Set(['jspang', '技术胖', 'web', 'jspang']);
 
@@ -117,7 +117,11 @@
     }
     // 第二种第一方法
     {
-
+        let map = new Map([
+            ['a', '123'],
+            ['b', 456]
+        ]);
+        console.log('map args', map);
     }
 </script>
 

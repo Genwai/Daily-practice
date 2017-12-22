@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    map 和 set 进行比较 map 和array set 和array 进行对比
+</body>
+<script>
+    {
+        // 优先使用map 唯一性set ：使用数据结构
+
+        /* 数据结构横向对比，增、查、改、删 */
+        let map = new Map();
+        let array = new Array(); //let array =[];
+
+        // 增 -增加对象
+        map.set('t', 1);
+        array.push({
+            t: 1
+        });
+
+        console.log('map-array', map, array);
+
+        // 查
+
+        let map_exit = map.has('t'); //返回的是true
+        let array_exit = array.find(item => item.t); //返回是值，对象
+        console.log('map-array', map_exit, array_exit);
+
+        //改
+        map.set('t', 2);
+        array.forEach(item => {
+            item.t ? item.t = 2 : ""
+        });
+        console.log('change', map, array);
+
+        // 删
+        // map.delete(t);
+        let index = array.findIndex(item => item.t);
+        array.splice(index, 1);
+        console.log(array);
+    }
+    /* 
+    1、set 与数组的对比
+        
+     */
+    {
+        let set = new Set();
+        let array = [];
+
+        // 增
+        set.add({
+            t: 'genwai'
+        });
+        array.push({
+            t: 'genwai'
+        })
+        console.log('set-array', set, array);
+
+        // 查
+        let set_find = set.has({
+            t: 'genwai'
+        });
+        let array_eixt = array.findIndex(item => item.t);
+        console.log(set_find, array_eixt);
+
+        // 改
+        set.forEach(item => {
+            item.t ? item.t = 2 : '';
+        });
+        array.forEach(item => {
+            item.t ? item.t = 2 : '';
+        });
+        console.log('set-array-modify', set, array);
+
+        // 删
+        set.forEach(item => item.t ? set.delete(item) : "");
+        let index = array.findIndex(item => item.t);
+        array.splice(index, 1);
+    }
+
+    /* 数据结构：对象之间的比较
+        set map obj
+     */
+    {
+        let item = {
+            t: 1
+        };
+        let map = new Map();
+        let obj = {};
+        let set = new Set();
+
+        // 增
+        map.set('t', 1);
+        set.add(item);
+        obj['t'] = 1;
+
+        console.log('map-set-obj', set, map, obj);
+
+        // 查
+        console.info({
+            map_exit: map.has('t'),
+            set_exit: set.has(item),
+            obj_exit: 't' in obj
+        })
+
+        // 改
+        map.set('t', 2);
+        item.t = 2;
+        obj.t = 2;
+
+        // 删除
+        map.delete('t');
+        set.delete(item);
+        delete obj['t'];
+    }
+</script>
+
+</html>
