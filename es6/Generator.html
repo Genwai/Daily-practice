@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Generator:异步编程的解决方案，promise next函数 相对promise更高级 yieldy*语法
+    <p>
+        retrun 结束，需要next下一步
+    </p>
+</body>
+<script>
+    {
+        // 区别与普通函数
+        // generator 基本定义
+        let tell = function*() {
+            yield 'a';
+            yield 'b';
+            return 'c'
+        };
+        let k = tell();
+        console.log(k.next());
+        console.log(k.next());
+        console.log(k.next());
+        console.log(k.next());
+    }
+
+    {
+        let obj = {}
+        obj[Symbol.iterator] = function*() {
+                yield 1;
+                yield 2;
+                yield 3;
+            } //通过这个函数生成一个值
+        for (let value of obj) {
+            console.log('value2', value);
+        }
+    }
+
+    {
+        // 状态机
+        // a b c 三个循环一直找到啊一个状态，相互转换
+        /*   let state = function*() {
+              while (1) {
+                  yield 'A';
+                  yield 'B';
+                  yield 'C';
+              }
+          }
+          let status = state();
+          console.log(status.next());
+          console.log(status.next());
+          console.log(status.next());
+          console.log(status.next());
+          console.log(status.next());
+          console.log(status.next()); */
+    }
+    /* 
+        {
+            // 还需要通过babel安装插件
+            let state = async function() {
+                while (1) {
+                    await 'A';
+                    await 'B';
+                    await 'C';
+                }
+            }
+            let status = state();
+            console.log(status.next());
+            console.log(status.next());
+            console.log(status.next());
+            console.log(status.next());
+            console.log(status.next());
+            console.log(status.next());
+        } */
+    // 抽奖逻辑 次数限制
+    {
+        // 业务逻辑
+        let draw = function(count) {
+            // 具体业务逻辑
+            console.log(`剩余次数${count}次`);
+        }
+
+        let resideue = function*(count) {
+            while (count > 0) {
+                count--;
+                yield draw(count);
+            }
+        }
+        let star = resideue(5);
+        let btn = document.createElement('button');
+        btn.id = 'start';
+        btn.textContent = '抽奖';
+        document.body.appendChild(btn);
+        document.getElementById('start').addEventListener('click', function() {
+            star.next();
+        }, false)
+
+    }
+
+    {
+        // 长伦掏
+        let ajax = function*() {
+            yield new Promise(function(resolve, reject) {
+                setTimeout(() => {
+                    resolve({
+                        code: 0
+                    })
+                }, 200);
+            })
+        }
+        let pull = function() {
+            let generator = ajax();
+            let step = generator.next();
+            step.value.then(function() {
+                if (d.code != 0) {
+                    setTimeout(() => {
+                        console.log('wait');
+                        pull()
+                    }, 1000);
+                } else {
+                    console.log(d);
+                }
+            })
+        }
+    }
+</script>
+
+</html>

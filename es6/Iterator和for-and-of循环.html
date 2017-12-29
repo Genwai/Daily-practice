@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Ilterator for..of
+    <!-- 
+        1、什么是Ilterator接口
+        2、for of
+        3、Iterator接口的基本用法
+
+
+     -->
+</body>
+<script>
+    {
+        let arr = ['hello', 'world'];
+        let map = arr[Symbol.iterator]();
+        console.log(map.next());
+        console.log(map.next());
+        console.log(map.next());
+    }
+
+    {
+        let obj = {
+            start: [1, 2, 3],
+            end: [2, 9, 8],
+
+            [Symbol.iterator]() {
+                let self = this;
+                let index = 0;
+                let arr = self.start.concat(self.end);
+                let len = arr.length;
+                return {
+                    next() {
+                        if (index < len) {
+                            return {
+                                value: arr[index++],
+                                done: false
+                            };
+                        } else {
+                            return {
+                                value: arr[index++],
+                                done: true,
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (let key of obj) {
+            console.log(key);
+        }
+    }
+
+    {
+        let arr = ['hello', 'world'];
+        for (let value of arr) {
+            console.log('value', value);
+        }
+    }
+</script>
+
+</html>

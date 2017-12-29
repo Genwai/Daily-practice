@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    修饰器函数 ，修改类的行为 类的修饰：用来修改类的行为
+</body>
+<script>
+    {
+        let readonly = function(target, name, descriptor) {
+            descriptor.writable = false;
+            return descriptor
+        }
+        class Test {
+            @readonly
+            time() {
+                return '2017-03-11'
+            }
+        }
+
+        let test = new Test();
+        // test.time=function () {
+        //     console.log('heihie');
+        // }
+        console.log('test', test.time());
+    }
+
+    {
+        let typename = function(target, name, descriptor) {
+                target.myname = 'hello'
+            }
+            /* 是类的静态属性：需要是直接使用类，构造函数 */
+        @typename
+        class Test {
+
+        }
+        console.log('类的修饰', Test.myname);
+    }
+</script>
+
+</html>
